@@ -1,5 +1,6 @@
 import React from "react";
 import { Tabs } from "antd";
+import { AllButtons } from "@/components/buttons/allButtons";
 
 const Home: React.FC = () => {
   const tabLabels = [
@@ -19,7 +20,8 @@ const Home: React.FC = () => {
   ];
 
   const tabComponents: { [key: string]: React.ReactNode } = {
-    Buttons: <div></div>,
+    Buttons: <AllButtons />,
+
     Inputs: <div>Inputs Component</div>,
     "File Upload": <div>File Upload Component</div>,
     Slider: <div>Slider Component</div>,
