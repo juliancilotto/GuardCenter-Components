@@ -13,7 +13,7 @@ export const DisableDefaultButtons: React.FC = () => (
 );
 
 export const DoubleIconDisableDefaultButton: React.FC = () => (
-  <Flex gap="small" flex="horizontal">
+  <Flex gap="small" vertical>
     <ButtonLayout
       type="primary"
       leftIcon={<Sparkle fillColor="white" isDisabled />}

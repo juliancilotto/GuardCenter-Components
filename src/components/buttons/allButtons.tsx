@@ -5,7 +5,7 @@ import { DisablePrimaryButtons } from "./PrimaryButtons/DisabledPrimaryButtons";
 import { DisableDefaultButtons } from "./DefaultButtons/DisabledDefaultButtons";
 
 export const AllButtons: React.FC = () => (
-  <Flex gap="small" flex="vertical">
+  <Flex gap="small" vertical>
     <PrimaryButtons />
     <DisablePrimaryButtons />
     <DefaultButtons />
