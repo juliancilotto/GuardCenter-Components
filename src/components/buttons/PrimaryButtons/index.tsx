@@ -1,6 +1,5 @@
 import React from "react";
-import { SearchOutlined } from "@ant-design/icons";
-import { Button, Flex, Tooltip } from "antd";
+import { Flex } from "antd";
 import { ButtonLayout } from "../buttonLayout";
 import { Sparkle } from "@/assets/icons/Sparkle";
 import { Dot } from "@/assets/icons/Dot";
