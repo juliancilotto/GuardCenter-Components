@@ -1,50 +1,50 @@
 import React from "react";
 import { Flex } from "antd";
-import { ButtonLayout } from "../../buttonLayout";
 import { Sparkle } from "@/assets/icons/Sparkle";
 import { Dot } from "@/assets/icons/Dot";
+import { DefaultButtonLayout } from "../../defaultButtonLayout";
 
-export const DisableDefaultButtons: React.FC = () => (
+export const DisableGrayDefaultButtons: React.FC = () => (
   <Flex gap="small" flex="horizontal">
-    <DoubleIconDisableDefaultButton />
-    <OnlyIconDisabledDefaultButton />
-    <IconDisabledDefaultButton />
+    <DoubleIconDisableGrayDefaultButton />
+    <OnlyIconDisabledGrayDefaultButton />
+    <IconDisabledGrayDefaultButton />
   </Flex>
 );
 
-export const DoubleIconDisableDefaultButton: React.FC = () => (
+export const DoubleIconDisableGrayDefaultButton: React.FC = () => (
   <Flex gap="small" vertical>
-    <ButtonLayout
-      type="primary"
+    <DefaultButtonLayout
+      type="default"
       leftIcon={<Sparkle fillColor="white" isDisabled />}
       rightIcon={<Sparkle fillColor="white" isDisabled />}
       isDisabled
       isDefault
     >
       Button CTA
-    </ButtonLayout>
+    </DefaultButtonLayout>
   </Flex>
 );
 
-export const OnlyIconDisabledDefaultButton: React.FC = () => (
+export const OnlyIconDisabledGrayDefaultButton: React.FC = () => (
   <Flex gap="small" vertical>
-    <ButtonLayout
-      type="primary"
+    <DefaultButtonLayout
+      type="default"
       leftIcon={<Dot fillColor="white" isDisabled />}
       isDisabled
       isDefault
     >
       Button CTA
-    </ButtonLayout>
+    </DefaultButtonLayout>
   </Flex>
 );
 
-export const IconDisabledDefaultButton: React.FC = () => (
+export const IconDisabledGrayDefaultButton: React.FC = () => (
   <Flex gap="small" vertical>
-    <ButtonLayout
+    <DefaultButtonLayout
       isDisabled
       isDefault
-      type="primary"
+      type="default"
       leftIcon={<Sparkle fillColor="white" isDisabled />}
     />
   </Flex>

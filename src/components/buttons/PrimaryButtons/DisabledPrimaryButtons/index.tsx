@@ -3,6 +3,7 @@ import { Flex } from "antd";
 import { ButtonLayout } from "../../buttonLayout";
 import { Sparkle } from "@/assets/icons/Sparkle";
 import { Dot } from "@/assets/icons/Dot";
+import { PrimaryButtonLayout } from "../primaryButtonLayout";
 
 export const DisablePrimaryButtons: React.FC = () => (
   <Flex gap="small" flex="horizontal">
@@ -14,32 +15,32 @@ export const DisablePrimaryButtons: React.FC = () => (
 
 export const DoubleIconDisablePrimarydButton: React.FC = () => (
   <Flex gap="small" vertical>
-    <ButtonLayout
+    <PrimaryButtonLayout
       type="primary"
       leftIcon={<Sparkle fillColor="white" isDisabled />}
       rightIcon={<Sparkle fillColor="white" isDisabled />}
       isDisabled
     >
       Button CTA
-    </ButtonLayout>
+    </PrimaryButtonLayout>
   </Flex>
 );
 
 export const OnlyIconDisabledPrimaryButton: React.FC = () => (
   <Flex gap="small" vertical>
-    <ButtonLayout
+    <PrimaryButtonLayout
       type="primary"
       leftIcon={<Dot fillColor="white" isDisabled />}
       isDisabled
     >
       Button CTA
-    </ButtonLayout>
+    </PrimaryButtonLayout>
   </Flex>
 );
 
 export const IconDisabledPrimaryButton: React.FC = () => (
   <Flex gap="small" vertical>
-    <ButtonLayout
+    <PrimaryButtonLayout
       isDisabled
       type="primary"
       leftIcon={<Sparkle fillColor="white" isDisabled />}

@@ -1,8 +1,8 @@
 import React from "react";
 import { Flex } from "antd";
-import { ButtonLayout } from "../buttonLayout";
 import { Sparkle } from "@/assets/icons/Sparkle";
 import { Dot } from "@/assets/icons/Dot";
+import { PrimaryButtonLayout } from "../primaryButtonLayout";
 
 export const PrimaryButtons: React.FC = () => (
   <Flex gap="small" flex="horizontal">
@@ -14,26 +14,29 @@ export const PrimaryButtons: React.FC = () => (
 
 export const DoubleIconPrimaryButton: React.FC = () => (
   <Flex gap="small" vertical>
-    <ButtonLayout
+    <PrimaryButtonLayout
       type="primary"
       leftIcon={<Sparkle fillColor="white" />}
       rightIcon={<Sparkle fillColor="white" />}
     >
       Button CTA
-    </ButtonLayout>
+    </PrimaryButtonLayout>
   </Flex>
 );
 
 export const OnlyIconPrimaryButton: React.FC = () => (
   <Flex gap="small" vertical>
-    <ButtonLayout type="primary" leftIcon={<Dot fillColor="white" />}>
+    <PrimaryButtonLayout type="primary" leftIcon={<Dot fillColor="white" />}>
       Button CTA
-    </ButtonLayout>
+    </PrimaryButtonLayout>
   </Flex>
 );
 
 export const IconPrimaryButton: React.FC = () => (
   <Flex gap="small" vertical>
-    <ButtonLayout type="primary" leftIcon={<Sparkle fillColor="white" />} />
+    <PrimaryButtonLayout
+      type="primary"
+      leftIcon={<Sparkle fillColor="white" />}
+    />
   </Flex>
 );

@@ -8,7 +8,7 @@ interface DoubleIconButtonProps {
   type: "primary" | "default" | "dashed" | "link" | "text";
   isDisabled?: boolean;
   isDefault?: boolean;
-  isSecondary?: boolean;
+  isGreen?: boolean;
 }
 
 export const DefaultButtonLayout: React.FC<DoubleIconButtonProps> = ({
@@ -18,7 +18,7 @@ export const DefaultButtonLayout: React.FC<DoubleIconButtonProps> = ({
   type = "primary",
   isDisabled = false,
   isDefault = false,
-  isSecondary = false,
+  isGreen = false,
   ...props
 }) => (
   <Flex gap="small" vertical>
@@ -37,7 +37,11 @@ export const DefaultButtonLayout: React.FC<DoubleIconButtonProps> = ({
               ? "transparent"
               : "#F2F4F7"
             : undefined,
-          borderColor: isDisabled ? "#EAECF0" : undefined,
+          borderColor: isGreen
+            ? isDisabled
+              ? "#EAECF0"
+              : "#6E9890"
+            : undefined,
           color: isDisabled ? "#98A2B3" : undefined,
           cursor: isDisabled ? "not-allowed" : "pointer",
         }}
