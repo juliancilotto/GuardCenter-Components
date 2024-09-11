@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Flex } from "antd";
-
 interface DoubleIconButtonProps {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
@@ -20,56 +19,58 @@ export const DefaultButtonLayout: React.FC<DoubleIconButtonProps> = ({
   isDefault = false,
   isGreen = false,
   ...props
-}) => (
-  <Flex gap="small" vertical>
-    <Flex gap="small">
-      <Button
-        size="large"
-        type={type}
-        {...props}
-        disabled={isDisabled}
-        style={{
-          paddingTop: 7,
-          paddingBottom: 7,
-          paddingInline: 12,
-          backgroundColor: isDisabled
-            ? isDefault
-              ? "transparent"
-              : "#F2F4F7"
-            : undefined,
-          borderColor: isGreen
-            ? isDisabled
-              ? "#EAECF0"
-              : "#6E9890"
-            : undefined,
-          color: isDisabled ? "#98A2B3" : undefined,
-          cursor: isDisabled ? "not-allowed" : "pointer",
-        }}
-      >
-        {leftIcon && (
-          <span
-            style={{
-              display: "flex",
-              alignItems: "center",
-              color: isDisabled ? "#98A2B3" : "white",
-            }}
-          >
-            {leftIcon}
-          </span>
-        )}
-        {children}
-        {rightIcon && (
-          <span
-            style={{
-              display: "flex",
-              alignItems: "center",
-              color: isDisabled ? "#98A2B3" : "white",
-            }}
-          >
-            {rightIcon}
-          </span>
-        )}
-      </Button>
+}) => {
+  return (
+    <Flex gap="small" vertical>
+      <Flex gap="small">
+        <Button
+          size="large"
+          type={type}
+          {...props}
+          disabled={isDisabled}
+          style={{
+            paddingTop: 7,
+            paddingBottom: 7,
+            paddingInline: 12,
+            backgroundColor: isDisabled
+              ? isDefault
+                ? "transparent"
+                : "#F2F4F7"
+              : undefined,
+            borderColor: isGreen
+              ? isDisabled
+                ? "#EAECF0"
+                : "#6E9890"
+              : undefined,
+            color: isDisabled ? "#98A2B3" : undefined,
+            cursor: isDisabled ? "not-allowed" : "pointer",
+          }}
+        >
+          {leftIcon && (
+            <span
+              style={{
+                display: "flex",
+                alignItems: "center",
+                color: isDisabled ? "#98A2B3" : "white",
+              }}
+            >
+              {leftIcon}
+            </span>
+          )}
+          {children}
+          {rightIcon && (
+            <span
+              style={{
+                display: "flex",
+                alignItems: "center",
+                color: isDisabled ? "#98A2B3" : "white",
+              }}
+            >
+              {rightIcon}
+            </span>
+          )}
+        </Button>
+      </Flex>
     </Flex>
-  </Flex>
-);
+  );
+};
