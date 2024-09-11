@@ -28,6 +28,13 @@ export const DefaultButtonLayout: React.FC<DoubleIconButtonProps> = ({
           type={type}
           {...props}
           disabled={isDisabled}
+          className={
+            !isDisabled
+              ? isGreen
+                ? "green-default-hover-button"
+                : "gray-default-hover-button"
+              : ""
+          }
           style={{
             paddingTop: 7,
             paddingBottom: 7,

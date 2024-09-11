@@ -18,6 +18,7 @@ export const DoubleIconGreenTextButton: React.FC = () => (
       type="text"
       leftIcon={<Sparkle fillColor="black" />}
       rightIcon={<Sparkle fillColor="black" />}
+      isGreen
     >
       Button CTA
     </TextButtonLayout>
@@ -26,7 +27,7 @@ export const DoubleIconGreenTextButton: React.FC = () => (
 
 export const OnlyIconGreenTexttButton: React.FC = () => (
   <Flex gap="small" vertical>
-    <TextButtonLayout type="text" leftIcon={<Dot fillColor="green" />}>
+    <TextButtonLayout type="text" leftIcon={<Dot fillColor="green" />} isGreen>
       Button CTA
     </TextButtonLayout>
   </Flex>
@@ -34,6 +35,10 @@ export const OnlyIconGreenTexttButton: React.FC = () => (
 
 export const IconGreenTextButton: React.FC = () => (
   <Flex gap="small" vertical>
-    <TextButtonLayout type="text" leftIcon={<Sparkle fillColor="black" />} />
+    <TextButtonLayout
+      type="text"
+      leftIcon={<Sparkle fillColor="black" />}
+      isGreen
+    />
   </Flex>
 );

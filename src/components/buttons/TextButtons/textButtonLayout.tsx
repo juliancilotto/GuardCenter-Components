@@ -26,6 +26,13 @@ export const TextButtonLayout: React.FC<DoubleIconButtonProps> = ({
         type={type}
         {...props}
         disabled={isDisabled}
+        className={
+          !isDisabled
+            ? isGreen
+              ? "green-text-hover-button"
+              : "gray-text-hover-button"
+            : ""
+        }
         style={{
           paddingTop: 7,
           paddingBottom: 7,
