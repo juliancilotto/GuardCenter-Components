@@ -2,34 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-.green-default-hover-button {
+.default-button {
   transition: background-color 0.3s ease;
 }
 
-.green-default-hover-button:hover {
-  background-color: #d9e4e2 !important;
-}
-
-.gray-default-hover-button {
-  transition: background-color 0.3s ease;
-}
-
-.gray-default-hover-button:hover {
+.default-button:hover {
   background-color: #f9fafb !important;
 }
-
-.green-text-hover-button {
+.default-button:disabled {
+  background-color: transparent !important;
+}
+.green-default-button {
   transition: background-color 0.3s ease;
+  border-color: #6e9890 !important;
 }
 
-.green-text-hover-button:hover {
+.green-default-button:hover {
   background-color: #d9e4e2 !important;
+  border-color: #6e9890 !important;
 }
 
-.gray-text-hover-button {
+.green-text-button {
   transition: background-color 0.3s ease;
+  border-color: transparent !important;
 }
 
-.gray-text-hover-button:hover {
-  background-color: #f9fafb !important;
+.green-text-button:hover {
+  background-color: #d9e4e2 !important;
+  border-color: transparent !important;
 }
