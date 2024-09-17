@@ -1,56 +1,216 @@
 import React from "react";
-import { Tabs } from "antd";
-import { AllButtons } from "@/components/buttons/allButtons";
+import { NativeButton } from "@/components/Button/nativeButton";
+import { Sparkle } from "@/assets/icons/Sparkle";
+import { Dot } from "@/assets/icons/Dot";
 
 const Home: React.FC = () => {
-  const tabLabels = [
-    "Buttons",
-    "Inputs",
-    "File Upload",
-    "Slider",
-    "Chips & Badges",
-    "Selects",
-    "Toggles",
-    "Checkbox & Radio",
-    "Switches",
-    "Tooltips",
-    "Date Picker",
-    "Modals",
-    "Table",
-  ];
-
-  const tabComponents: { [key: string]: React.ReactNode } = {
-    Buttons: <AllButtons />,
-
-    Inputs: <div>Inputs Component</div>,
-    "File Upload": <div>File Upload Component</div>,
-    Slider: <div>Slider Component</div>,
-    "Chips & Badges": <div>Chips & Badges Component</div>,
-    Selects: <div>Selects Component</div>,
-    Toggles: <div>Toggles Component</div>,
-    "Checkbox & Radio": <div>Checkbox & Radio Component</div>,
-    Switches: <div>Switches Component</div>,
-    Tooltips: <div>Tooltips Component</div>,
-    "Date Picker": <div>Date Picker Component</div>,
-    Modals: <div>Modals Component</div>,
-    Table: <div>Table Component</div>,
-  };
-
   return (
-    <div>
-      <Tabs
-        defaultActiveKey="1"
-        type="card"
-        size="large"
-        items={tabLabels.map((label, i) => {
-          const id = String(i + 1);
-          return {
-            label: label,
-            key: id,
-            children: tabComponents[label] || <div>Default Content</div>,
-          };
-        })}
-      />
+    <div style={{ marginLeft: 10 }}>
+      <div className="Buttons">
+        <h2>
+          <strong>Buttons:</strong>
+        </h2>
+        <div>
+          <div style={{ display: "flex", gap: "16px", marginTop: 5 }}>
+            <NativeButton
+              type="primary"
+              leftIcon={<Sparkle fillColor="white" />}
+              rightIcon={<Sparkle fillColor="white" />}
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton type="primary" leftIcon={<Dot fillColor="white" />}>
+              Button CTA
+            </NativeButton>
+            <NativeButton type="primary">
+              <Sparkle fillColor="white" />
+            </NativeButton>
+          </div>
+          <div style={{ display: "flex", gap: "16px", marginTop: 5 }}>
+            <NativeButton
+              type="primary"
+              leftIcon={<Sparkle fillColor="white" isDisabled />}
+              rightIcon={<Sparkle fillColor="white" isDisabled />}
+              disabled
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton
+              type="primary"
+              leftIcon={<Dot fillColor="white" isDisabled />}
+              disabled
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton type="primary" disabled>
+              <Sparkle fillColor="white" isDisabled />
+            </NativeButton>
+          </div>
+        </div>
+        <div style={{ marginTop: 25 }}>
+          <div style={{ display: "flex", gap: "16px", marginTop: 5 }}>
+            <NativeButton
+              type="default"
+              leftIcon={<Sparkle fillColor="black" />}
+              rightIcon={<Sparkle fillColor="black" />}
+              variant="default"
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton
+              type="default"
+              leftIcon={<Dot fillColor="#17B26A" />}
+              variant="default"
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton type="default" variant="default">
+              <Sparkle fillColor="black" />
+            </NativeButton>
+          </div>
+          <div style={{ display: "flex", gap: "16px", marginTop: 5 }}>
+            <NativeButton
+              type="default"
+              leftIcon={<Sparkle fillColor="black" isDisabled />}
+              rightIcon={<Sparkle fillColor="black" isDisabled />}
+              disabled
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton
+              type="default"
+              leftIcon={<Dot fillColor="#17B26A" isDisabled />}
+              disabled
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton type="default" disabled>
+              <Sparkle fillColor="black" isDisabled />
+            </NativeButton>
+          </div>
+        </div>
+        <div style={{ marginTop: 25 }}>
+          <div style={{ display: "flex", gap: "16px", marginTop: 5 }}>
+            <NativeButton
+              type="default"
+              leftIcon={<Sparkle fillColor="black" />}
+              rightIcon={<Sparkle fillColor="black" />}
+              variant="green"
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton
+              type="default"
+              leftIcon={<Dot fillColor="#17B26A" />}
+              variant="green"
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton type="default" variant="green">
+              <Sparkle fillColor="black" />
+            </NativeButton>
+          </div>
+          <div style={{ display: "flex", gap: "16px", marginTop: 5 }}>
+            <NativeButton
+              type="default"
+              leftIcon={<Sparkle fillColor="black" isDisabled />}
+              rightIcon={<Sparkle fillColor="black" isDisabled />}
+              disabled
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton
+              type="default"
+              leftIcon={<Dot fillColor="#17B26A" isDisabled />}
+              disabled
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton type="default" disabled>
+              <Sparkle fillColor="black" isDisabled />
+            </NativeButton>
+          </div>
+        </div>
+        <div style={{ marginTop: 25 }}>
+          <div style={{ display: "flex", gap: "16px", marginTop: 5 }}>
+            <NativeButton
+              type="text"
+              leftIcon={<Sparkle fillColor="black" />}
+              rightIcon={<Sparkle fillColor="black" />}
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton type="text" leftIcon={<Dot fillColor="#17B26A" />}>
+              Button CTA
+            </NativeButton>
+            <NativeButton type="text">
+              <Sparkle fillColor="black" />
+            </NativeButton>
+          </div>
+          <div style={{ display: "flex", gap: "16px", marginTop: 5 }}>
+            <NativeButton
+              type="text"
+              leftIcon={<Sparkle fillColor="black" isDisabled />}
+              rightIcon={<Sparkle fillColor="black" isDisabled />}
+              disabled
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton
+              type="text"
+              leftIcon={<Dot fillColor="#17B26A" isDisabled />}
+              disabled
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton type="text" disabled>
+              <Sparkle fillColor="black" isDisabled />
+            </NativeButton>
+          </div>
+        </div>
+        <div style={{ marginTop: 25 }}>
+          <div style={{ display: "flex", gap: "16px" }}>
+            <NativeButton
+              type="text"
+              leftIcon={<Sparkle fillColor="black" />}
+              rightIcon={<Sparkle fillColor="black" />}
+              variant="green"
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton
+              type="text"
+              leftIcon={<Dot fillColor="#17B26A" />}
+              variant="green"
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton type="text" variant="green">
+              <Sparkle fillColor="black" />
+            </NativeButton>
+          </div>
+          <div style={{ display: "flex", gap: "16px", marginTop: 5 }}>
+            <NativeButton
+              type="text"
+              leftIcon={<Sparkle fillColor="black" isDisabled />}
+              rightIcon={<Sparkle fillColor="black" isDisabled />}
+              disabled
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton
+              type="text"
+              leftIcon={<Dot fillColor="#17B26A" isDisabled />}
+              disabled
+            >
+              Button CTA
+            </NativeButton>
+            <NativeButton type="text" disabled>
+              <Sparkle fillColor="black" isDisabled />
+            </NativeButton>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

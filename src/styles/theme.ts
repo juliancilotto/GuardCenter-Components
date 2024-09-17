@@ -19,7 +19,7 @@ const theme: ThemeConfig = {
       contentLineHeight: 20,
       primaryShadow: "0px 1px 2px 0px rgba(16, 24, 40, 0.05)",
       defaultShadow: " 0px 1px 2px 0px rgba(16, 24, 40, 0.05)",
-
+      contentFontSize: 14,
       colorPrimaryHover: colorPalette.brand[700],
       defaultHoverBorderColor: colorPalette.gray[300],
       borderColorDisabled: colorPalette.gray[100],
