@@ -1,1 +1,1 @@
-guard-center-components.vercel.app
+https://guard-center-components.vercel.app/
