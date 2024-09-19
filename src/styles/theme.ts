@@ -24,6 +24,14 @@ const theme: ThemeConfig = {
       defaultHoverBorderColor: colorPalette.gray[300],
       borderColorDisabled: colorPalette.gray[100],
     },
+    Input: {
+      activeShadow: "0 0 0 3px rgba(110, 152, 144, 0.2)",
+      errorActiveShadow: "0 0 0 3px rgba(240, 68, 56, 0.24)",
+    },
+    InputNumber: {
+      activeShadow: "0 0 0 3px rgba(110, 152, 144, 0.2)",
+      errorActiveShadow: "0 0 0 3px rgba(240, 68, 56, 0.24)",
+    },
   },
 };
 
