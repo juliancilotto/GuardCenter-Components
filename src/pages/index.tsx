@@ -9,6 +9,7 @@ import InputMask from "react-input-mask";
 import { Calendar } from "@/assets/icons/Calendar";
 import { Payment } from "@/assets/icons/Payment";
 import { Copy } from "@/assets/icons/Copy";
+import TextArea from "antd/es/input/TextArea";
 
 const Home: React.FC = () => {
   const [value, setValue] = useState("");
@@ -48,7 +49,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div style={{ marginLeft: 10 }}>
+    <div style={{ marginLeft: 10, margin: 10 }}>
       <div className="Buttons">
         <h2>
           <strong>Buttons:</strong>
@@ -766,6 +767,29 @@ const Home: React.FC = () => {
               </Button>
             </Space.Compact>
           </div>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "16px",
+            marginTop: 50,
+          }}
+          className="text-area-input"
+        >
+          <Space.Compact style={{ width: "415px" }}>
+            <TextArea rows={4} placeholder="Enter a description..." />
+          </Space.Compact>
+          <Space.Compact style={{ width: "415px" }}>
+            <TextArea rows={4} placeholder="Enter a description..." disabled />
+          </Space.Compact>
+          <Space.Compact style={{ width: "415px" }}>
+            <TextArea
+              rows={4}
+              placeholder="Enter a description..."
+              status="error"
+            />
+          </Space.Compact>
         </div>
       </div>
     </div>
