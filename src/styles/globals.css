@@ -31,3 +31,10 @@
   background-color: #d9e4e2 !important;
   border-color: transparent !important;
 }
+
+.input-disabled input::placeholder {
+  color: #667085;
+}
+.number-input-disabled input::placeholder {
+  color: #667085 !important;
+}
