@@ -38,3 +38,26 @@
 .number-input-disabled input::placeholder {
   color: #667085 !important;
 }
+
+.ant-tooltip-content {
+  margin-top: -10px !important;
+  margin-bottom: -16px !important;
+  padding-top: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: black !important;
+  font-weight: 500;
+}
+
+.ant-tooltip-inner {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: black !important;
+}
+
+.ant-tooltip-arrow {
+  background-color: transparent !important;
+  display: none !important;
+}

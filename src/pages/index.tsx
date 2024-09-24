@@ -2,7 +2,16 @@ import React, { useState } from "react";
 import { NativeButton } from "@/components/Button/nativeButton";
 import { Sparkle } from "@/assets/icons/Sparkle";
 import { Dot } from "@/assets/icons/Dot";
-import { Button, Input, InputNumber, Select, SelectProps, Space } from "antd";
+import {
+  Button,
+  Input,
+  InputNumber,
+  Select,
+  SelectProps,
+  Slider,
+  SliderSingleProps,
+  Space,
+} from "antd";
 import { InfoCircle } from "@/assets/icons/InfoCircle";
 import { ExclamationCircle } from "@/assets/icons/ExclamationCircle";
 import InputMask from "react-input-mask";
@@ -47,6 +56,10 @@ const Home: React.FC = () => {
   const handleSelectChange = (value: string[]) => {
     console.log(`selected ${value}`);
   };
+
+  const formatter: NonNullable<SliderSingleProps["tooltip"]>["formatter"] = (
+    value
+  ) => `${value}%`;
 
   return (
     <div style={{ marginLeft: 10, margin: 10 }}>
@@ -790,6 +803,114 @@ const Home: React.FC = () => {
               status="error"
             />
           </Space.Compact>
+        </div>
+      </div>
+      <div
+        className="sliders"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "16px",
+          marginTop: 5,
+        }}
+      >
+        <h2>
+          <strong>Siders:</strong>
+        </h2>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "100px",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "16px",
+              width: "415px",
+            }}
+            className="classic-slider"
+          >
+            <Slider range defaultValue={[0, 100]} />
+            <Slider range defaultValue={[25, 78]} />
+            <Slider range defaultValue={[65, 100]} />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "16px",
+              width: "415px",
+            }}
+            className="percentage-slider"
+          >
+            <Slider
+              range
+              defaultValue={[0, 100]}
+              tooltip={{
+                formatter,
+                open: true,
+                placement: "bottom",
+              }}
+            />
+            <Slider
+              range
+              defaultValue={[25, 78]}
+              tooltip={{
+                formatter,
+                open: true,
+                placement: "bottom",
+              }}
+            />
+            <Slider
+              range
+              defaultValue={[65, 100]}
+              tooltip={{
+                formatter,
+                open: true,
+                placement: "bottom",
+              }}
+            />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "16px",
+              width: "415px",
+            }}
+            className="percentage-slider-tooltip"
+          >
+            <Slider
+              range
+              defaultValue={[0, 100]}
+              tooltip={{
+                formatter,
+                open: true,
+                placement: "top",
+              }}
+            />
+            <Slider
+              range
+              defaultValue={[25, 78]}
+              tooltip={{
+                formatter,
+                open: true,
+                placement: "top",
+              }}
+            />
+            <Slider
+              range
+              defaultValue={[65, 100]}
+              tooltip={{
+                formatter,
+                open: true,
+                placement: "top",
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>

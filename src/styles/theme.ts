@@ -32,6 +32,11 @@ const theme: ThemeConfig = {
       activeShadow: "0 0 0 3px rgba(110, 152, 144, 0.2)",
       errorActiveShadow: "0 0 0 3px rgba(240, 68, 56, 0.24)",
     },
+    Slider: {
+      handleColor: colorPalette.brand[500],
+      railBg: "#EAECF0",
+      trackBg: colorPalette.brand[500],
+    },
   },
 };
 
