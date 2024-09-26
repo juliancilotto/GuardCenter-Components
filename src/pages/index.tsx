@@ -14,6 +14,7 @@ import {
   Slider,
   SliderSingleProps,
   Space,
+  Switch,
   Tag,
 } from "antd";
 import { InfoCircle } from "@/assets/icons/InfoCircle";
@@ -815,15 +816,7 @@ const Home: React.FC = () => {
           </Space.Compact>
         </div>
       </div>
-      <div
-        className="sliders"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "14px",
-          marginTop: 5,
-        }}
-      >
+      <div className="sliders">
         <h2>
           <strong>Sliders:</strong>
         </h2>
@@ -5088,6 +5081,69 @@ const Home: React.FC = () => {
               backgroundColor: "#FFFFFF",
             }}
           />
+        </div>
+      </div>
+      <div className="Toggles">
+        <h2>
+          <strong>Toggles:</strong>
+        </h2>
+        <div
+          className="default-toggle"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Switch />
+          <Switch defaultChecked />
+          <Switch disabled />
+          <Switch defaultChecked disabled />
+          <div
+            className="text-toggle"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "10px",
+            }}
+          >
+            <Switch checked />
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <text
+                style={{ fontSize: "14px", color: "#344054", fontWeight: 500 }}
+              >
+                Toggle Title
+              </text>
+              <text
+                style={{ fontSize: "14px", color: "#475467", fontWeight: 400 }}
+              >
+                Toggle support content.
+              </text>
+            </div>
+          </div>
+          <div
+            className="text-toggle-disabled"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "10px",
+            }}
+          >
+            <Switch />
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <text
+                style={{ fontSize: "14px", color: "#344054", fontWeight: 500 }}
+              >
+                Toggle Title
+              </text>
+              <text
+                style={{ fontSize: "14px", color: "#475467", fontWeight: 400 }}
+              >
+                Toggle support content.
+              </text>
+            </div>
+          </div>
         </div>
       </div>
     </div>

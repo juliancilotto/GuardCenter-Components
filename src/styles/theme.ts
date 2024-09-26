@@ -37,6 +37,10 @@ const theme: ThemeConfig = {
       railBg: "#EAECF0",
       trackBg: colorPalette.brand[500],
     },
+    Switch: {
+      colorPrimary: colorPalette.brand[500],
+      colorPrimaryHover: colorPalette.brand[700],
+    },
   },
 };
 
