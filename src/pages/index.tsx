@@ -3,6 +3,7 @@ import { NativeButton } from "@/components/Button/nativeButton";
 import { Sparkle } from "@/assets/icons/Sparkle";
 import { Dot } from "@/assets/icons/Dot";
 import {
+  Alert,
   Avatar,
   Button,
   Flex,
@@ -17,8 +18,6 @@ import {
 } from "antd";
 import { InfoCircle } from "@/assets/icons/InfoCircle";
 import { ExclamationCircle } from "@/assets/icons/ExclamationCircle";
-import InputMask from "react-input-mask";
-import { Calendar } from "@/assets/icons/Calendar";
 import { Payment } from "@/assets/icons/Payment";
 import { Copy } from "@/assets/icons/Copy";
 import TextArea from "antd/es/input/TextArea";
@@ -29,8 +28,7 @@ import {
   CloseOutlined,
   PlusOutlined,
 } from "@ant-design/icons";
-import { ArrowRight } from "@/assets/icons/ArrowRight";
-import Icon from "@ant-design/icons/lib/components/Icon";
+import { AlertTag } from "@/components/Tags/AlertTag";
 
 const Home: React.FC = () => {
   const [value, setValue] = useState("");
@@ -925,13 +923,11 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="Chips & Badges">
+      <div className="Chips">
         <h2>
-          <strong>Chips & Badges:</strong>
-        </h2>
-        <h3>
           <strong>Chips:</strong>
-        </h3>
+        </h2>
+
         <div
           className="default chips"
           style={{
@@ -2860,9 +2856,2239 @@ const Home: React.FC = () => {
             ></Tag>
           </Flex>
         </div>
-        <h3>
-          <strong>Badges:</strong>
-        </h3>
+      </div>
+      <div className="Alerts">
+        <h2>
+          <strong>Alerts:</strong>
+        </h2>
+
+        <div
+          className="default alert"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            className="default-alert"
+            message="We've just released a new feature"
+            action={<ArrowRightOutlined style={{ color: "#667085" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                label="Version 4.0"
+              />
+            }
+            style={{
+              backgroundColor: "#F9FAFB",
+              borderColor: "#EAECF0",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#344054",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="default-alert"
+            message="We've just released a new feature"
+            action={<ArrowRightOutlined style={{ color: "#667085" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                label="Version 4.0"
+              />
+            }
+            style={{
+              backgroundColor: "#F9FAFB",
+              borderColor: "#EAECF0",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#344054",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="default-alert"
+            message="We've just released a new feature"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                label="Version 4.0"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              backgroundColor: "#F9FAFB",
+              borderColor: "#EAECF0",
+              borderRadius: "10px",
+              gap: "12px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#344054",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="default-alert"
+            message="We've just released a new feature"
+            action={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                label="Version 4.0"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              backgroundColor: "#F9FAFB",
+              borderColor: "#EAECF0",
+              borderRadius: "10px",
+              gap: "12px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#344054",
+              padding: 4,
+            }}
+          />
+        </div>
+        <div
+          className="dark tag alert"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            className="default-alert"
+            message="We've just released a new feature"
+            action={<ArrowRightOutlined style={{ color: "#667085" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#344054"
+                color="#FFFFFF"
+                label="Version 4.0"
+              />
+            }
+            style={{
+              backgroundColor: "#F9FAFB",
+              borderColor: "#EAECF0",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#344054",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="default-alert"
+            message="We've just released a new feature"
+            action={<ArrowRightOutlined style={{ color: "#667085" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#344054"
+                color="#FFFFFF"
+                label="Version 4.0"
+              />
+            }
+            style={{
+              backgroundColor: "#F9FAFB",
+              borderColor: "#EAECF0",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#344054",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="default-alert"
+            message="We've just released a new feature"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#344054"
+                color="#FFFFFF"
+                label="Version 4.0"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              backgroundColor: "#F9FAFB",
+              borderColor: "#EAECF0",
+              borderRadius: "10px",
+              gap: "12px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#344054",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="default-alert"
+            message="We've just released a new feature"
+            action={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#344054"
+                color="#FFFFFF"
+                label="Version 4.0"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              backgroundColor: "#F9FAFB",
+              borderColor: "#EAECF0",
+              borderRadius: "10px",
+              gap: "12px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#344054",
+              padding: 4,
+            }}
+          />
+        </div>
+        <div
+          className="light tag alert"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            className="default-alert"
+            message="We've just released a new feature"
+            action={<ArrowRightOutlined style={{ color: "#667085" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#475467"
+                label="Version 4.0"
+              />
+            }
+            style={{
+              backgroundColor: "#F9FAFB",
+              borderColor: "#475467",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#344054",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="default-alert"
+            message="We've just released a new feature"
+            action={<ArrowRightOutlined style={{ color: "#667085" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#475467"
+                label="Version 4.0"
+              />
+            }
+            style={{
+              backgroundColor: "#F9FAFB",
+              borderColor: "#475467",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#344054",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="default-alert"
+            message="We've just released a new feature"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                label="Version 4.0"
+                borderColor="#475467"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              backgroundColor: "#F9FAFB",
+              borderColor: "#475467",
+              borderRadius: "10px",
+              gap: "12px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#344054",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="default-alert"
+            message="We've just released a new feature"
+            action={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                label="Version 4.0"
+                borderColor="#475467"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              backgroundColor: "#F9FAFB",
+              borderColor: "#475467",
+              borderRadius: "10px",
+              gap: "12px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#344054",
+              padding: 4,
+            }}
+          />
+        </div>
+        <div
+          className="new feature tag alert"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            className="green-alert"
+            message="We've just released a new feature"
+            action={<ArrowRightOutlined style={{ color: "#27665A" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#1A443C"
+                borderColor="#92B2AC"
+                label="New Feature"
+              />
+            }
+            style={{
+              backgroundColor: "#D9E4E2",
+              borderColor: "#92B2AC",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#1A443C",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="green-alert"
+            message="We've just released a new feature"
+            action={<ArrowRightOutlined style={{ color: "#27665A" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#1A443C"
+                borderColor="#92B2AC"
+                label="New Feature"
+              />
+            }
+            style={{
+              backgroundColor: "#D9E4E2",
+              borderColor: "#92B2AC",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#1A443C",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="green-alert"
+            message="We've just released a new feature"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#1A443C"
+                borderColor="#92B2AC"
+                label="New Feature"
+                rightIcon={<ArrowRightOutlined style={{ color: "#27665A" }} />}
+              />
+            }
+            style={{
+              backgroundColor: "#D9E4E2",
+              borderColor: "#92B2AC",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#1A443C",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="green-alert"
+            message="We've just released a new feature"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#1A443C"
+                borderColor="#92B2AC"
+                label="New Feature"
+                rightIcon={<ArrowRightOutlined style={{ color: "#27665A" }} />}
+              />
+            }
+            style={{
+              backgroundColor: "#D9E4E2",
+              borderColor: "#92B2AC",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#1A443C",
+              padding: 4,
+            }}
+          />
+        </div>
+        <div
+          className="dark tag new feature alert"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            className="green-alert"
+            message="We've just released a new feature"
+            action={<ArrowRightOutlined style={{ color: "#27665A" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#21554B"
+                color="#FFFFFF"
+                borderColor="#92B2AC"
+                label="New Feature"
+              />
+            }
+            style={{
+              backgroundColor: "#D9E4E2",
+              borderColor: "#92B2AC",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#1A443C",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="green-alert"
+            message="We've just released a new feature"
+            action={<ArrowRightOutlined style={{ color: "#27665A" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#21554B"
+                color="#FFFFFF"
+                borderColor="#92B2AC"
+                label="New Feature"
+              />
+            }
+            style={{
+              backgroundColor: "#D9E4E2",
+              borderColor: "#92B2AC",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#1A443C",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="green-alert"
+            message="We've just released a new feature"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#1A443C"
+                borderColor="#92B2AC"
+                label="New Feature"
+                rightIcon={<ArrowRightOutlined style={{ color: "#27665A" }} />}
+              />
+            }
+            style={{
+              backgroundColor: "#D9E4E2",
+              borderColor: "#92B2AC",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#1A443C",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="green-alert"
+            message="We've just released a new feature"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#1A443C"
+                borderColor="#92B2AC"
+                label="New Feature"
+                rightIcon={<ArrowRightOutlined style={{ color: "#27665A" }} />}
+              />
+            }
+            style={{
+              backgroundColor: "#D9E4E2",
+              borderColor: "#92B2AC",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#1A443C",
+              padding: 4,
+            }}
+          />
+        </div>
+        <div
+          className="light tag new feature alert"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            className="green-alert"
+            message="We've just released a new feature"
+            action={<ArrowRightOutlined style={{ color: "#27665A" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#1A443C"
+                borderColor="#21554B"
+                label="New Feature"
+              />
+            }
+            style={{
+              backgroundColor: "white",
+              borderColor: "#21554B",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#1A443C",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="green-alert"
+            message="We've just released a new feature"
+            action={<ArrowRightOutlined style={{ color: "#27665A" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#1A443C"
+                borderColor="#21554B"
+                label="New Feature"
+              />
+            }
+            style={{
+              backgroundColor: "white",
+              borderColor: "#21554B",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#1A443C",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="green-alert"
+            message="We've just released a new feature"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#1A443C"
+                borderColor="#92B2AC"
+                label="New Feature"
+                rightIcon={<ArrowRightOutlined style={{ color: "#27665A" }} />}
+              />
+            }
+            style={{
+              backgroundColor: "white",
+              borderColor: "#21554B",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#1A443C",
+              padding: 4,
+            }}
+          />
+          <Alert
+            className="green-alert"
+            message="We've just released a new feature"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#1A443C"
+                borderColor="#92B2AC"
+                label="New Feature"
+                rightIcon={<ArrowRightOutlined style={{ color: "#27665A" }} />}
+              />
+            }
+            style={{
+              backgroundColor: "white",
+              borderColor: "#21554B",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#1A443C",
+              padding: 4,
+            }}
+          />
+        </div>
+        <div
+          className="error alert"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            type="error"
+            className="error-alert"
+            message="There was a problem with that action"
+            action={<ArrowRightOutlined style={{ color: "#F04438" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#B42318"
+                borderColor="#FECDCA"
+                label="Error"
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#B42318",
+              padding: 4,
+            }}
+          />
+          <Alert
+            type="error"
+            className="error-alert"
+            message="There was a problem with that action"
+            action={<ArrowRightOutlined style={{ color: "#F04438" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#B42318"
+                borderColor="#FECDCA"
+                label="Error"
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#B42318",
+              padding: 4,
+            }}
+          />
+          <Alert
+            type="error"
+            className="error-alert"
+            message="There was a problem with that action"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#B42318"
+                borderColor="#FECDCA"
+                label="Fix Now"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#B42318",
+              padding: 4,
+            }}
+          />
+          <Alert
+            type="error"
+            className="error-alert"
+            message="There was a problem with that action"
+            action={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#B42318"
+                borderColor="#FECDCA"
+                label="Fix Now"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#B42318",
+              padding: 4,
+            }}
+          />
+        </div>
+        <div
+          className="dark tag error alert"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            type="error"
+            className="error-alert"
+            message="There was a problem with that action"
+            action={<ArrowRightOutlined style={{ color: "#F04438" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#D92D20"
+                color="#FFFFFF"
+                borderColor="#FECDCA"
+                label="Error"
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#B42318",
+              padding: 4,
+            }}
+          />
+          <Alert
+            type="error"
+            className="error-alert"
+            message="There was a problem with that action"
+            action={<ArrowRightOutlined style={{ color: "#F04438" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#D92D20"
+                color="#FFFFFF"
+                borderColor="#FECDCA"
+                label="Error"
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#B42318",
+              padding: 4,
+            }}
+          />
+          <Alert
+            type="error"
+            className="error-alert"
+            message="There was a problem with that action"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#D92D20"
+                color="#FFFFFF"
+                borderColor="#FECDCA"
+                label="Fix Now"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#B42318",
+              padding: 4,
+            }}
+          />
+          <Alert
+            type="error"
+            className="error-alert"
+            message="There was a problem with that action"
+            action={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#D92D20"
+                color="#FFFFFF"
+                borderColor="#FECDCA"
+                label="Fix Now"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#B42318",
+              padding: 4,
+            }}
+          />
+        </div>
+        <div
+          className="light tag error alert"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            type="error"
+            className="error-alert"
+            message="There was a problem with that action"
+            action={<ArrowRightOutlined style={{ color: "#F04438" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#B42318"
+                borderColor="#D92D20"
+                label="Error"
+              />
+            }
+            style={{
+              backgroundColor: "white",
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#B42318",
+              padding: 4,
+              borderColor: "#D92D20",
+            }}
+          />
+          <Alert
+            type="error"
+            className="error-alert"
+            message="There was a problem with that action"
+            action={<ArrowRightOutlined style={{ color: "#F04438" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#B42318"
+                borderColor="#D92D20"
+                label="Error"
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#B42318",
+              padding: 4,
+              borderColor: "#D92D20",
+              backgroundColor: "white",
+            }}
+          />
+          <Alert
+            type="error"
+            className="error-alert"
+            message="There was a problem with that action"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#B42318"
+                borderColor="#D92D20"
+                label="Fix Now"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#B42318",
+              padding: 4,
+              borderColor: "#D92D20",
+              backgroundColor: "white",
+            }}
+          />
+          <Alert
+            type="error"
+            className="error-alert"
+            message="There was a problem with that action"
+            action={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#B42318"
+                borderColor="#D92D20"
+                label="Fix Now"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#B42318",
+              padding: 4,
+              borderColor: "#D92D20",
+              backgroundColor: "white",
+            }}
+          />
+        </div>
+        <div
+          className="warning alert"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            type="warning"
+            className="warning-alert"
+            message="Just to let you know this might be a problem"
+            action={<ArrowRightOutlined style={{ color: "#F79009" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#B54708"
+                borderColor="#FEDF89"
+                label="Warning"
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#B54708",
+              padding: 4,
+              width: "360px",
+            }}
+          />
+          <Alert
+            type="warning"
+            className="warning-alert"
+            message="Just to let you know this might be a problem"
+            action={<ArrowRightOutlined style={{ color: "#F79009" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#B54708"
+                borderColor="#FEDF89"
+                label="Warning"
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#B54708",
+              padding: 4,
+              width: "400px",
+            }}
+          />
+          <div
+            className="warning alert"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "10px",
+              marginTop: "10px",
+            }}
+          >
+            {" "}
+            <Alert
+              type="warning"
+              className="warning-alert"
+              message="Just to let you know this might be a problem"
+              action={
+                <AlertTag
+                  fontSize="12px"
+                  backgroundColor="#FFFFFF"
+                  color="#B54708"
+                  borderColor="#FEDF89"
+                  label="Warning"
+                  rightIcon={
+                    <ArrowRightOutlined style={{ color: "#F79009" }} />
+                  }
+                />
+              }
+              style={{
+                borderRadius: "10px",
+                gap: "5px",
+                fontWeight: 500,
+                fontSize: "12px",
+                color: "#B54708",
+                padding: 4,
+              }}
+            />
+            <Alert
+              type="warning"
+              className="warning-alert"
+              message="Just to let you know this might be a problem"
+              action={
+                <AlertTag
+                  fontSize="14px"
+                  backgroundColor="#FFFFFF"
+                  color="#B54708"
+                  borderColor="#FEDF89"
+                  label="Warning"
+                  rightIcon={
+                    <ArrowRightOutlined style={{ color: "#F79009" }} />
+                  }
+                />
+              }
+              style={{
+                borderRadius: "10px",
+                gap: "5px",
+                fontWeight: 500,
+                fontSize: "14px",
+                color: "#B54708",
+                padding: 4,
+              }}
+            />
+          </div>
+        </div>
+        <div
+          className="dark tag warning alert"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            type="warning"
+            className="warning-alert"
+            message="Just to let you know this might be a problem"
+            action={<ArrowRightOutlined style={{ color: "#F79009" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#DC6803"
+                color="#FFFFFF"
+                borderColor="#FEDF89"
+                label="Warning"
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#B54708",
+              padding: 4,
+              width: "360px",
+            }}
+          />
+          <Alert
+            type="warning"
+            className="warning-alert"
+            message="Just to let you know this might be a problem"
+            action={<ArrowRightOutlined style={{ color: "#F79009" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#DC6803"
+                color="#FFFFFF"
+                borderColor="#FEDF89"
+                label="Warning"
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#B54708",
+              padding: 4,
+              width: "400px",
+            }}
+          />
+          <div
+            className="dark tag warning alert"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "10px",
+              marginTop: "10px",
+            }}
+          >
+            <Alert
+              type="warning"
+              className="warning-alert"
+              message="Just to let you know this might be a problem"
+              action={
+                <AlertTag
+                  fontSize="12px"
+                  backgroundColor="#DC6803"
+                  color="#FFFFFF"
+                  borderColor="#FEDF89"
+                  label="Warning"
+                  rightIcon={
+                    <ArrowRightOutlined style={{ color: "#FFFFFF" }} />
+                  }
+                />
+              }
+              style={{
+                borderRadius: "10px",
+                gap: "5px",
+                fontWeight: 500,
+                fontSize: "12px",
+                color: "#B54708",
+                padding: 4,
+              }}
+            />
+            <Alert
+              type="warning"
+              className="warning-alert"
+              message="Just to let you know this might be a problem"
+              action={
+                <AlertTag
+                  fontSize="14px"
+                  backgroundColor="#DC6803"
+                  color="#FFFFFF"
+                  borderColor="#FEDF89"
+                  label="Warning"
+                  rightIcon={
+                    <ArrowRightOutlined style={{ color: "#FFFFFF" }} />
+                  }
+                />
+              }
+              style={{
+                borderRadius: "10px",
+                gap: "5px",
+                fontWeight: 500,
+                fontSize: "14px",
+                color: "#B54708",
+                padding: 4,
+              }}
+            />
+          </div>
+        </div>
+        <div
+          className="light tag warning alert"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            type="warning"
+            className="warning-alert"
+            message="Just to let you know this might be a problem"
+            action={<ArrowRightOutlined style={{ color: "#F79009" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#B54708"
+                borderColor="#DC6803"
+                label="Warning"
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#B54708",
+              padding: 4,
+              borderColor: "#DC6803",
+              width: "360px",
+              backgroundColor: "white",
+            }}
+          />
+          <Alert
+            type="warning"
+            className="warning-alert"
+            message="Just to let you know this might be a problem"
+            action={<ArrowRightOutlined style={{ color: "#F79009" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#B54708"
+                borderColor="#DC6803"
+                label="Warning"
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#B54708",
+              padding: 4,
+              borderColor: "#DC6803",
+              width: "400px",
+              backgroundColor: "white",
+            }}
+          />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "10px",
+              marginTop: "10px",
+            }}
+          >
+            <Alert
+              type="warning"
+              className="warning-alert"
+              message="Just to let you know this might be a problem"
+              action={
+                <AlertTag
+                  fontSize="12px"
+                  backgroundColor="#FFFFFF"
+                  color="#B54708"
+                  borderColor="#DC6803"
+                  label="Warning"
+                  rightIcon={<ArrowRightOutlined />}
+                />
+              }
+              style={{
+                borderRadius: "10px",
+                gap: "5px",
+                fontWeight: 500,
+                fontSize: "12px",
+                color: "#B54708",
+                padding: 4,
+                borderColor: "#DC6803",
+                width: "360px",
+                backgroundColor: "white",
+              }}
+            />
+            <Alert
+              type="warning"
+              className="warning-alert"
+              message="Just to let you know this might be a problem"
+              action={
+                <AlertTag
+                  fontSize="14px"
+                  backgroundColor="#FFFFFF"
+                  color="#B54708"
+                  borderColor="#DC6803"
+                  label="Warning"
+                  rightIcon={<ArrowRightOutlined />}
+                />
+              }
+              style={{
+                borderRadius: "10px",
+                gap: "5px",
+                fontWeight: 500,
+                fontSize: "14px",
+                color: "#B54708",
+                padding: 4,
+                borderColor: "#DC6803",
+                width: "400px",
+                backgroundColor: "white",
+              }}
+            />
+          </div>
+        </div>
+        <div
+          className="succes alert"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            type="success"
+            className="success-alert"
+            message="You've updated your profile and details"
+            action={<ArrowRightOutlined style={{ color: "#17B26A" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#067647"
+                borderColor="#ABEFC6"
+                label="Success"
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#067647",
+              padding: 4,
+            }}
+          />
+          <Alert
+            type="success"
+            className="success-alert"
+            message="You've updated your profile and details"
+            action={<ArrowRightOutlined style={{ color: "#17B26A" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#067647"
+                borderColor="#ABEFC6"
+                label="Success"
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#067647",
+              padding: 4,
+            }}
+          />
+          <Alert
+            type="success"
+            className="success-alert"
+            message="You've updated your profile and details"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#067647"
+                borderColor="#ABEFC6"
+                label="Success"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#067647",
+              padding: 4,
+            }}
+          />
+          <Alert
+            type="success"
+            className="success-alert"
+            message="You've updated your profile and details"
+            action={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#067647"
+                borderColor="#ABEFC6"
+                label="Success"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#067647",
+              padding: 4,
+            }}
+          />
+        </div>
+        <div
+          className="dark tag success alert"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            type="success"
+            className="success-alert"
+            message="You've updated your profile and details"
+            action={<ArrowRightOutlined style={{ color: "#17B26A" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#079455"
+                color="#FFFFFF"
+                borderColor="#ABEFC6"
+                label="Success"
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#067647",
+              padding: 4,
+            }}
+          />
+          <Alert
+            type="success"
+            className="success-alert"
+            message="You've updated your profile and details"
+            action={<ArrowRightOutlined style={{ color: "#17B26A" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#079455"
+                color="#FFFFFF"
+                borderColor="#ABEFC6"
+                label="Success"
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#067647",
+              padding: 4,
+            }}
+          />
+          <Alert
+            type="success"
+            className="success-alert"
+            message="You've updated your profile and details"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#079455"
+                color="#FFFFFF"
+                borderColor="#ABEFC6"
+                label="Success"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#067647",
+              padding: 4,
+            }}
+          />
+          <Alert
+            type="success"
+            className="success-alert"
+            message="You've updated your profile and details"
+            action={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#079455"
+                color="#FFFFFF"
+                borderColor="#ABEFC6"
+                label="Success"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#067647",
+              padding: 4,
+            }}
+          />
+        </div>
+        <div
+          className="light tag success alert"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            type="success"
+            className="success-alert"
+            message="You've updated your profile and details"
+            action={<ArrowRightOutlined style={{ color: "#17B26A" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#067647"
+                borderColor="#079455"
+                label="Success"
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#067647",
+              padding: 4,
+              borderColor: "#079455",
+              backgroundColor: "white",
+            }}
+          />
+          <Alert
+            type="success"
+            className="success-alert"
+            message="You've updated your profile and details"
+            action={<ArrowRightOutlined style={{ color: "#17B26A" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#067647"
+                borderColor="#079455"
+                label="Success"
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#067647",
+              padding: 4,
+              borderColor: "#079455",
+              backgroundColor: "white",
+            }}
+          />
+          <Alert
+            type="success"
+            className="success-alert"
+            message="You've updated your profile and details"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#067647"
+                borderColor="#079455"
+                label="Success"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#067647",
+              padding: 4,
+              borderColor: "#079455",
+              backgroundColor: "white",
+            }}
+          />
+          <Alert
+            type="success"
+            className="success-alert"
+            message="You've updated your profile and details"
+            action={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#067647"
+                borderColor="#079455"
+                label="Success"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#067647",
+              padding: 4,
+              borderColor: "#079455",
+              backgroundColor: "white",
+            }}
+          />
+        </div>
+        <div
+          className="transparent alert"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            className="transparent-alert"
+            message="We've just released a new feature"
+            action={<ArrowRightOutlined style={{ color: "#667085" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="New Feature"
+                leftIcon={<SmallDot fillColor="#17B26A" />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+            }}
+          />
+          <Alert
+            className="transparent-alert"
+            message="You've updated your profile and details"
+            action={<ArrowRightOutlined style={{ color: "#667085" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="New Feature"
+                leftIcon={<SmallDot fillColor="#17B26A" />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+            }}
+          />
+          <Alert
+            className="transparent-alert"
+            message="We've just released a new feature"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="New Feature"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            showIcon
+            icon={<SmallDot fillColor="#17B26A" />}
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+            }}
+          />
+          <Alert
+            className="transparent-alert"
+            message="You've updated your profile and details"
+            action={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="New Feature"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            showIcon
+            icon={<SmallDot fillColor="#17B26A" />}
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+            }}
+          />
+        </div>
+        <div
+          className="transparent alert"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            className="transparent-alert"
+            message="We've just released a new feature"
+            action={<ArrowRightOutlined style={{ color: "#667085" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="New Feature"
+                leftIcon={<SmallDot fillColor="#9E77ED" />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+            }}
+          />
+          <Alert
+            className="transparent-alert"
+            message="You've updated your profile and details"
+            action={<ArrowRightOutlined style={{ color: "#667085" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="New Feature"
+                leftIcon={<SmallDot fillColor="#9E77ED" />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+            }}
+          />
+          <Alert
+            className="transparent-alert"
+            message="We've just released a new feature"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="New Feature"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            showIcon
+            icon={<SmallDot fillColor="#9E77ED" />}
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+            }}
+          />
+          <Alert
+            className="transparent-alert"
+            message="You've updated your profile and details"
+            action={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="New Feature"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            showIcon
+            icon={<SmallDot fillColor="#9E77ED" />}
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+            }}
+          />
+        </div>
+        <div
+          className="transparent alert"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            className="transparent-alert"
+            message="There was a problem with that action"
+            action={<ArrowRightOutlined style={{ color: "#667085" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="Error"
+                leftIcon={<SmallDot fillColor="#F04438" />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+            }}
+          />
+          <Alert
+            className="transparent-alert"
+            message="There was a problem with that action"
+            action={<ArrowRightOutlined style={{ color: "#667085" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="Error"
+                leftIcon={<SmallDot fillColor="#F04438" />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+            }}
+          />
+          <Alert
+            className="transparent-alert"
+            message="There was a problem with that action"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="Error"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            showIcon
+            icon={<SmallDot fillColor="#F04438" />}
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+            }}
+          />
+          <Alert
+            className="transparent-alert"
+            message="There was a problem with that action"
+            action={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="Error"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            showIcon
+            icon={<SmallDot fillColor="#F04438" />}
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+            }}
+          />
+        </div>
+        <div
+          className="transparent alert"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            className="transparent-alert"
+            message="Just to let you know this might be a problem"
+            action={<ArrowRightOutlined style={{ color: "#667085" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="Warning"
+                leftIcon={<SmallDot fillColor="#F79009" />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+              width: "380px",
+            }}
+          />
+          <Alert
+            className="transparent-alert"
+            message="Just to let you know this might be a problem"
+            action={<ArrowRightOutlined style={{ color: "#667085" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="Warning"
+                leftIcon={<SmallDot fillColor="#F79009" />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+              width: "420px",
+            }}
+          />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "10px",
+              marginTop: "10px",
+            }}
+          >
+            <Alert
+              className="transparent-alert"
+              message="Just to let you know this might be a problem"
+              action={
+                <AlertTag
+                  fontSize="12px"
+                  backgroundColor="#FFFFFF"
+                  color="#344054"
+                  borderColor="#D0D5DD"
+                  label="Warning"
+                  rightIcon={<ArrowRightOutlined />}
+                />
+              }
+              showIcon
+              icon={<SmallDot fillColor="#F79009" />}
+              style={{
+                borderRadius: "10px",
+                gap: "5px",
+                fontWeight: 500,
+                fontSize: "12px",
+                color: "#344054",
+                padding: 4,
+                borderColor: "#D0D5DD",
+                backgroundColor: "#FFFFFF",
+              }}
+            />
+            <Alert
+              className="transparent-alert"
+              message="Just to let you know this might be a problem"
+              action={
+                <AlertTag
+                  fontSize="14px"
+                  backgroundColor="#FFFFFF"
+                  color="#344054"
+                  borderColor="#D0D5DD"
+                  label="Warning"
+                  rightIcon={<ArrowRightOutlined />}
+                />
+              }
+              showIcon
+              icon={<SmallDot fillColor="#F79009" />}
+              style={{
+                borderRadius: "10px",
+                gap: "5px",
+                fontWeight: 500,
+                fontSize: "14px",
+                color: "#344054",
+                padding: 4,
+                borderColor: "#D0D5DD",
+                backgroundColor: "#FFFFFF",
+              }}
+            />
+          </div>
+        </div>
+        <div
+          className="transparent alert"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Alert
+            className="transparent-alert"
+            message="You've updated your profilw and details"
+            action={<ArrowRightOutlined style={{ color: "#667085" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="Success"
+                leftIcon={<SmallDot fillColor="#17B26A" />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+            }}
+          />
+          <Alert
+            className="transparent-alert"
+            message="You've updated your profilw and details"
+            action={<ArrowRightOutlined style={{ color: "#667085" }} />}
+            showIcon
+            icon={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="Success"
+                leftIcon={<SmallDot fillColor="#17B26A" />}
+              />
+            }
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+            }}
+          />
+          <Alert
+            className="transparent-alert"
+            message="You've updated your profilw and details"
+            action={
+              <AlertTag
+                fontSize="12px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="Success"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            showIcon
+            icon={<SmallDot fillColor="#17B26A" />}
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+            }}
+          />
+          <Alert
+            className="transparent-alert"
+            message="You've updated your profilw and details"
+            action={
+              <AlertTag
+                fontSize="14px"
+                backgroundColor="#FFFFFF"
+                color="#344054"
+                borderColor="#D0D5DD"
+                label="Success"
+                rightIcon={<ArrowRightOutlined />}
+              />
+            }
+            showIcon
+            icon={<SmallDot fillColor="#17B26A" />}
+            style={{
+              borderRadius: "10px",
+              gap: "5px",
+              fontWeight: 500,
+              fontSize: "14px",
+              color: "#344054",
+              padding: 4,
+              borderColor: "#D0D5DD",
+              backgroundColor: "#FFFFFF",
+            }}
+          />
+        </div>
       </div>
     </div>
   );

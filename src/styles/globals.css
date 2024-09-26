@@ -61,3 +61,22 @@
   background-color: transparent !important;
   display: none !important;
 }
+
+.default-alert:hover {
+  background-color: #f2f4f7 !important;
+}
+.green-alert:hover {
+  background-color: #b6cbc7 !important;
+}
+.error-alert:hover {
+  background-color: #fee4e2 !important;
+}
+.warning-alert:hover {
+  background-color: #fef0c7 !important;
+}
+.success-alert:hover {
+  background-color: #dcfae6 !important;
+}
+.transparent-alert:hover {
+  background-color: #f9fafb !important;
+}
