@@ -6,9 +6,11 @@ import {
   Alert,
   Avatar,
   Button,
+  Checkbox,
   Flex,
   Input,
   InputNumber,
+  Radio,
   Select,
   SelectProps,
   Slider,
@@ -5141,6 +5143,173 @@ const Home: React.FC = () => {
                 style={{ fontSize: "14px", color: "#475467", fontWeight: 400 }}
               >
                 Toggle support content.
+              </text>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="Checkbox">
+        <h2>
+          <strong>Checkbox:</strong>
+        </h2>
+        <div
+          className="checkbox"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Checkbox />
+          <Checkbox checked />
+          <Checkbox disabled />
+
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "10px",
+              alignItems: "flex-start",
+            }}
+          >
+            <Checkbox />
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <text
+                style={{ fontSize: "14px", color: "#344054", fontWeight: 500 }}
+              >
+                Checkbox Title
+              </text>
+              <text
+                style={{ fontSize: "14px", color: "#475467", fontWeight: 400 }}
+              >
+                Checkbox support content.
+              </text>
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "10px",
+              alignItems: "flex-start",
+            }}
+          >
+            <Checkbox checked />
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <text
+                style={{ fontSize: "14px", color: "#344054", fontWeight: 500 }}
+              >
+                Checkbox Title
+              </text>
+              <text
+                style={{ fontSize: "14px", color: "#475467", fontWeight: 400 }}
+              >
+                Checkbox support content.
+              </text>
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "10px",
+              alignItems: "flex-start",
+            }}
+          >
+            <Checkbox disabled />
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <text
+                style={{ fontSize: "14px", color: "#344054", fontWeight: 500 }}
+              >
+                Checkbox Title
+              </text>
+              <text
+                style={{ fontSize: "14px", color: "#475467", fontWeight: 400 }}
+              >
+                Checkbox support content.
+              </text>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="Radio">
+        <h2>
+          <strong>Radio:</strong>
+        </h2>
+        <div
+          className="radio"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Radio />
+          <Radio checked />
+          <Radio disabled />
+
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "flex-start",
+            }}
+          >
+            <Radio />
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <text
+                style={{ fontSize: "14px", color: "#344054", fontWeight: 500 }}
+              >
+                Radio Title
+              </text>
+              <text
+                style={{ fontSize: "14px", color: "#475467", fontWeight: 400 }}
+              >
+                Radio support content.
+              </text>
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "flex-start",
+            }}
+          >
+            <Radio checked />
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <text
+                style={{ fontSize: "14px", color: "#344054", fontWeight: 500 }}
+              >
+                Radio Title
+              </text>
+              <text
+                style={{ fontSize: "14px", color: "#475467", fontWeight: 400 }}
+              >
+                Radio support content.
+              </text>
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "flex-start",
+            }}
+          >
+            <Radio disabled />
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <text
+                style={{ fontSize: "14px", color: "#344054", fontWeight: 500 }}
+              >
+                Radio Title
+              </text>
+              <text
+                style={{ fontSize: "14px", color: "#475467", fontWeight: 400 }}
+              >
+                Radio support content.
               </text>
             </div>
           </div>
