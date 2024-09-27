@@ -80,3 +80,8 @@
 .transparent-alert:hover {
   background-color: #f9fafb !important;
 }
+
+.button-group:hover {
+  background-color: #f9fafb;
+  color: #344054;
+}

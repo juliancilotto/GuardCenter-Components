@@ -26,6 +26,7 @@ import { Copy } from "@/assets/icons/Copy";
 import TextArea from "antd/es/input/TextArea";
 import { SmallDot } from "@/assets/icons/SmallDot";
 import {
+  ArrowLeftOutlined,
   ArrowRightOutlined,
   ArrowUpOutlined,
   CloseOutlined,
@@ -5313,6 +5314,108 @@ const Home: React.FC = () => {
               </text>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="Switch">
+        <h2>
+          <strong>Switches:</strong>
+        </h2>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Radio.Group defaultValue="a" size="large">
+            <Radio.Button
+              value="a"
+              className="button-group"
+              style={{ color: "#344054" }}
+            >
+              Text
+            </Radio.Button>
+            <Radio.Button
+              value="b"
+              className="button-group"
+              style={{ color: "#344054" }}
+            >
+              Text
+            </Radio.Button>
+            <Radio.Button
+              value="c"
+              className="button-group"
+              style={{ color: "#344054" }}
+            >
+              Text
+            </Radio.Button>
+          </Radio.Group>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Radio.Group disabled defaultValue="a" size="large">
+            <Radio.Button
+              value="a"
+              className="button-group"
+              style={{ color: "#344054" }}
+            >
+              Text
+            </Radio.Button>
+            <Radio.Button
+              value="b"
+              className="button-group"
+              style={{ color: "#344054" }}
+            >
+              Text
+            </Radio.Button>
+            <Radio.Button
+              value="c"
+              className="button-group"
+              style={{ color: "#344054" }}
+            >
+              Text
+            </Radio.Button>
+          </Radio.Group>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Radio.Group defaultValue="a" size="large">
+            <Radio.Button
+              value="a"
+              className="button-group"
+              style={{ color: "#344054" }}
+            >
+              <ArrowLeftOutlined style={{ color: "#667085" }} />
+            </Radio.Button>
+            <Radio.Button
+              value="b"
+              className="button-group"
+              style={{ color: "#344054" }}
+            >
+              <PlusOutlined style={{ color: "#667085" }} />
+            </Radio.Button>
+            <Radio.Button
+              value="c"
+              className="button-group"
+              style={{ color: "#344054" }}
+            >
+              {" "}
+              <ArrowRightOutlined style={{ color: "#667085" }} />
+            </Radio.Button>
+          </Radio.Group>
         </div>
       </div>
     </div>
