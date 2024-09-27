@@ -18,6 +18,7 @@ import {
   Space,
   Switch,
   Tag,
+  Tooltip,
 } from "antd";
 import { InfoCircle } from "@/assets/icons/InfoCircle";
 import { ExclamationCircle } from "@/assets/icons/ExclamationCircle";
@@ -30,9 +31,12 @@ import {
   ArrowRightOutlined,
   ArrowUpOutlined,
   CloseOutlined,
+  InfoCircleOutlined,
+  InfoOutlined,
   PlusOutlined,
 } from "@ant-design/icons";
 import { AlertTag } from "@/components/Tags/AlertTag";
+import { HelpCircle } from "@/assets/icons/HelpCircle";
 
 const Home: React.FC = () => {
   const [value, setValue] = useState("");
@@ -859,6 +863,13 @@ const Home: React.FC = () => {
                 formatter,
                 open: true,
                 placement: "bottom",
+                overlayInnerStyle: {
+                  fontWeight: 600,
+                  fontSize: "12px",
+                  color: "#101828",
+                },
+                color: "white",
+                arrow: false,
               }}
             />
             <Slider
@@ -868,6 +879,13 @@ const Home: React.FC = () => {
                 formatter,
                 open: true,
                 placement: "bottom",
+                overlayInnerStyle: {
+                  fontWeight: 600,
+                  fontSize: "12px",
+                  color: "#101828",
+                },
+                color: "white",
+                arrow: false,
               }}
             />
             <Slider
@@ -877,6 +895,13 @@ const Home: React.FC = () => {
                 formatter,
                 open: true,
                 placement: "bottom",
+                overlayInnerStyle: {
+                  fontWeight: 600,
+                  fontSize: "12px",
+                  color: "#101828",
+                },
+                color: "white",
+                arrow: false,
               }}
             />
           </div>
@@ -896,6 +921,18 @@ const Home: React.FC = () => {
                 formatter,
                 open: true,
                 placement: "top",
+                overlayInnerStyle: {
+                  fontWeight: 600,
+                  fontSize: "12px",
+                  background: "transparent",
+                  boxShadow: "none",
+                  color: "black",
+                },
+                overlayStyle: {
+                  background: "transparent",
+                  boxShadow: "none",
+                },
+                arrow: false,
               }}
             />
             <Slider
@@ -905,6 +942,18 @@ const Home: React.FC = () => {
                 formatter,
                 open: true,
                 placement: "top",
+                overlayInnerStyle: {
+                  fontWeight: 600,
+                  fontSize: "12px",
+                  background: "transparent",
+                  boxShadow: "none",
+                  color: "black",
+                },
+                overlayStyle: {
+                  background: "transparent",
+                  boxShadow: "none",
+                },
+                arrow: false,
               }}
             />
             <Slider
@@ -914,6 +963,18 @@ const Home: React.FC = () => {
                 formatter,
                 open: true,
                 placement: "top",
+                overlayInnerStyle: {
+                  fontWeight: 600,
+                  fontSize: "12px",
+                  background: "transparent",
+                  boxShadow: "none",
+                  color: "black",
+                },
+                overlayStyle: {
+                  background: "transparent",
+                  boxShadow: "none",
+                },
+                arrow: false,
               }}
             />
           </div>
@@ -5416,6 +5477,581 @@ const Home: React.FC = () => {
               <ArrowRightOutlined style={{ color: "#667085" }} />
             </Radio.Button>
           </Radio.Group>
+        </div>
+      </div>
+      <div className="Tooltip">
+        <h2>
+          <strong>Tooltip:</strong>
+        </h2>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "200px",
+            marginTop: "50px",
+            marginLeft: "50px",
+          }}
+        >
+          <Tooltip
+            title="This is a tooltip"
+            open
+            color="#0D231F"
+            overlayInnerStyle={{ fontWeight: 600, fontSize: "12px" }}
+            arrow={false}
+          >
+            {" "}
+            info
+          </Tooltip>
+          <Tooltip
+            title="This is a tooltip"
+            open
+            color="#0D231F"
+            overlayInnerStyle={{ fontWeight: 600, fontSize: "12px" }}
+            arrow={true}
+            placement="bottom"
+          >
+            info
+          </Tooltip>
+          <Tooltip
+            title="This is a tooltip"
+            open
+            color="#0D231F"
+            overlayInnerStyle={{ fontWeight: 600, fontSize: "12px" }}
+            arrow={true}
+            placement="bottomLeft"
+          >
+            info
+          </Tooltip>
+          <Tooltip
+            title="This is a tooltip"
+            open
+            color="#0D231F"
+            overlayInnerStyle={{ fontWeight: 600, fontSize: "12px" }}
+            arrow={true}
+            placement="bottomRight"
+          >
+            info
+          </Tooltip>
+          <Tooltip
+            title="This is a tooltip"
+            open
+            color="#0D231F"
+            overlayInnerStyle={{ fontWeight: 600, fontSize: "12px" }}
+            arrow={true}
+            placement="top"
+          >
+            info
+          </Tooltip>
+          <Tooltip
+            title="This is a tooltip"
+            open
+            color="#0D231F"
+            overlayInnerStyle={{ fontWeight: 600, fontSize: "12px" }}
+            arrow={true}
+            placement="left"
+          >
+            info
+          </Tooltip>
+          <Tooltip
+            title="This is a tooltip"
+            open
+            color="#0D231F"
+            overlayInnerStyle={{ fontWeight: 600, fontSize: "12px" }}
+            arrow={true}
+            placement="right"
+          >
+            info
+          </Tooltip>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "200px",
+            marginTop: "100px",
+            marginLeft: "50px",
+          }}
+        >
+          <Tooltip
+            title="This is a tooltip"
+            open
+            color="white"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "black",
+            }}
+            overlayStyle={{ boxShadow: " 0px 4px 6px -2px #10182808" }}
+            arrow={false}
+          >
+            {" "}
+            info
+          </Tooltip>
+          <Tooltip
+            title="This is a tooltip"
+            open
+            color="white"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "black",
+            }}
+            overlayStyle={{ boxShadow: " 0px 4px 6px -2px #10182808" }}
+            arrow={true}
+            placement="bottom"
+          >
+            info
+          </Tooltip>
+          <Tooltip
+            title="This is a tooltip"
+            open
+            color="white"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "black",
+            }}
+            overlayStyle={{ boxShadow: " 0px 4px 6px -2px #10182808" }}
+            arrow={true}
+            placement="bottomLeft"
+          >
+            info
+          </Tooltip>
+          <Tooltip
+            title="This is a tooltip"
+            open
+            color="white"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "black",
+            }}
+            overlayStyle={{ boxShadow: " 0px 4px 6px -2px #10182808" }}
+            arrow={true}
+            placement="bottomRight"
+          >
+            info
+          </Tooltip>
+          <Tooltip
+            title="This is a tooltip"
+            open
+            color="white"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "black",
+            }}
+            overlayStyle={{ boxShadow: " 0px 4px 6px -2px #10182808" }}
+            arrow={true}
+            placement="top"
+          >
+            info
+          </Tooltip>
+          <Tooltip
+            title="This is a tooltip"
+            open
+            color="white"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "black",
+            }}
+            overlayStyle={{ boxShadow: " 0px 4px 6px -2px #10182808" }}
+            arrow={true}
+            placement="left"
+          >
+            info
+          </Tooltip>
+          <Tooltip
+            title="This is a tooltip"
+            open
+            color="white"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "black",
+            }}
+            overlayStyle={{ boxShadow: " 0px 4px 6px -2px #10182808" }}
+            arrow={true}
+            placement="right"
+          >
+            info
+          </Tooltip>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "600px",
+            marginTop: "200px",
+            marginLeft: "100px",
+          }}
+        >
+          <Tooltip
+            autoAdjustOverflow={false}
+            title={
+              <>
+                <text style={{ fontSize: "12px", fontWeight: 600 }}>
+                  This is a tooltip
+                </text>
+                <br></br>
+
+                <text style={{ fontSize: "12px", fontWeight: 500 }}>
+                  Tooltips are used to describe or identify an element. In most
+                  scenarios, tooltips help the user understand meaning, function
+                  or alt-text.
+                </text>
+              </>
+            }
+            color="white"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "black",
+            }}
+            overlayStyle={{ boxShadow: " 0px 4px 6px -2px #10182808" }}
+            arrow={false}
+          >
+            {" "}
+            info
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                <text style={{ fontSize: "12px", fontWeight: 600 }}>
+                  This is a tooltip
+                </text>
+                <br></br>
+
+                <text style={{ fontSize: "12px", fontWeight: 500 }}>
+                  Tooltips are used to describe or identify an element. In most
+                  scenarios, tooltips help the user understand meaning, function
+                  or alt-text.
+                </text>
+              </>
+            }
+            color="white"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "black",
+            }}
+            overlayStyle={{ boxShadow: " 0px 4px 6px -2px #10182808" }}
+            arrow={true}
+            placement="bottom"
+          >
+            info
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                <text style={{ fontSize: "12px", fontWeight: 600 }}>
+                  This is a tooltip
+                </text>
+                <br></br>
+
+                <text style={{ fontSize: "12px", fontWeight: 500 }}>
+                  Tooltips are used to describe or identify an element. In most
+                  scenarios, tooltips help the user understand meaning, function
+                  or alt-text.
+                </text>
+              </>
+            }
+            color="white"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "black",
+            }}
+            overlayStyle={{ boxShadow: " 0px 4px 6px -2px #10182808" }}
+            arrow={true}
+            placement="bottomRight"
+          >
+            info
+          </Tooltip>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "600px",
+            marginTop: "300px",
+            marginLeft: "50px",
+          }}
+        >
+          <Tooltip
+            title={
+              <>
+                <text style={{ fontSize: "12px", fontWeight: 600 }}>
+                  This is a tooltip
+                </text>
+                <br></br>
+
+                <text style={{ fontSize: "12px", fontWeight: 500 }}>
+                  Tooltips are used to describe or identify an element. In most
+                  scenarios, tooltips help the user understand meaning, function
+                  or alt-text.
+                </text>
+              </>
+            }
+            color="#0D231F"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "white",
+            }}
+            arrow={false}
+          >
+            {" "}
+            info
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                <text style={{ fontSize: "12px", fontWeight: 600 }}>
+                  This is a tooltip
+                </text>
+                <br></br>
+
+                <text style={{ fontSize: "12px", fontWeight: 500 }}>
+                  Tooltips are used to describe or identify an element. In most
+                  scenarios, tooltips help the user understand meaning, function
+                  or alt-text.
+                </text>
+              </>
+            }
+            color="#0D231F"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "white",
+            }}
+            arrow={true}
+            placement="bottom"
+          >
+            info
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                <text style={{ fontSize: "12px", fontWeight: 600 }}>
+                  This is a tooltip
+                </text>
+                <br></br>
+
+                <text style={{ fontSize: "12px", fontWeight: 500 }}>
+                  Tooltips are used to describe or identify an element. In most
+                  scenarios, tooltips help the user understand meaning, function
+                  or alt-text.
+                </text>
+              </>
+            }
+            color="#0D231F"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "white",
+            }}
+            arrow={true}
+            placement="bottom"
+          >
+            info
+          </Tooltip>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "600px",
+            marginTop: "200px",
+            marginLeft: "100px",
+          }}
+        >
+          <Tooltip
+            autoAdjustOverflow={false}
+            title={
+              <>
+                <text style={{ fontSize: "12px", fontWeight: 600 }}>
+                  This is a tooltip
+                </text>
+                <br></br>
+
+                <text style={{ fontSize: "12px", fontWeight: 500 }}>
+                  Tooltips are used to describe or identify an element. In most
+                  scenarios, tooltips help the user understand meaning, function
+                  or alt-text.
+                </text>
+              </>
+            }
+            color="white"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "black",
+            }}
+            overlayStyle={{ boxShadow: " 0px 4px 6px -2px #10182808" }}
+            arrow={false}
+          >
+            <span>
+              <HelpCircle />
+            </span>
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                <text style={{ fontSize: "12px", fontWeight: 600 }}>
+                  This is a tooltip
+                </text>
+                <br></br>
+
+                <text style={{ fontSize: "12px", fontWeight: 500 }}>
+                  Tooltips are used to describe or identify an element. In most
+                  scenarios, tooltips help the user understand meaning, function
+                  or alt-text.
+                </text>
+              </>
+            }
+            color="white"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "black",
+            }}
+            overlayStyle={{ boxShadow: " 0px 4px 6px -2px #10182808" }}
+            arrow={true}
+            placement="bottom"
+          >
+            <span>
+              <HelpCircle />
+            </span>
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                <text style={{ fontSize: "12px", fontWeight: 600 }}>
+                  This is a tooltip
+                </text>
+                <br></br>
+
+                <text style={{ fontSize: "12px", fontWeight: 500 }}>
+                  Tooltips are used to describe or identify an element. In most
+                  scenarios, tooltips help the user understand meaning, function
+                  or alt-text.
+                </text>
+              </>
+            }
+            color="white"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "black",
+            }}
+            overlayStyle={{ boxShadow: " 0px 4px 6px -2px #10182808" }}
+            arrow={true}
+            placement="bottomRight"
+          >
+            <span>
+              <HelpCircle />
+            </span>
+          </Tooltip>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "600px",
+            marginTop: "300px",
+            marginLeft: "50px",
+          }}
+        >
+          <Tooltip
+            title={
+              <>
+                <text style={{ fontSize: "12px", fontWeight: 600 }}>
+                  This is a tooltip
+                </text>
+                <br></br>
+
+                <text style={{ fontSize: "12px", fontWeight: 500 }}>
+                  Tooltips are used to describe or identify an element. In most
+                  scenarios, tooltips help the user understand meaning, function
+                  or alt-text.
+                </text>
+              </>
+            }
+            color="#0D231F"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "white",
+            }}
+            arrow={false}
+          >
+            {" "}
+            <span>
+              <HelpCircle />
+            </span>
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                <text style={{ fontSize: "12px", fontWeight: 600 }}>
+                  This is a tooltip
+                </text>
+                <br></br>
+
+                <text style={{ fontSize: "12px", fontWeight: 500 }}>
+                  Tooltips are used to describe or identify an element. In most
+                  scenarios, tooltips help the user understand meaning, function
+                  or alt-text.
+                </text>
+              </>
+            }
+            color="#0D231F"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "white",
+            }}
+            arrow={true}
+            placement="bottom"
+          >
+            <span>
+              <HelpCircle />
+            </span>
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                <text style={{ fontSize: "12px", fontWeight: 600 }}>
+                  This is a tooltip
+                </text>
+                <br></br>
+
+                <text style={{ fontSize: "12px", fontWeight: 500 }}>
+                  Tooltips are used to describe or identify an element. In most
+                  scenarios, tooltips help the user understand meaning, function
+                  or alt-text.
+                </text>
+              </>
+            }
+            color="#0D231F"
+            overlayInnerStyle={{
+              fontWeight: 600,
+              fontSize: "12px",
+              color: "white",
+            }}
+            arrow={true}
+            placement="bottom"
+          >
+            <span>
+              <HelpCircle />
+            </span>
+          </Tooltip>
         </div>
       </div>
     </div>
