@@ -39,7 +39,7 @@
   color: #667085 !important;
 }
 
-.ant-tooltip-content {
+/* .ant-tooltip-content {
   margin-top: -10px !important;
   margin-bottom: -16px !important;
   padding-top: 0 !important;
@@ -60,7 +60,7 @@
 .ant-tooltip-arrow {
   background-color: transparent !important;
   display: none !important;
-}
+} */
 
 .default-alert:hover {
   background-color: #f2f4f7 !important;
@@ -84,4 +84,8 @@
 .button-group:hover {
   background-color: #f9fafb;
   color: #344054;
+}
+
+.help-circle-icon:hover {
+  stroke: #667085;
 }
