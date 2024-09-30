@@ -41,6 +41,9 @@ const theme: ThemeConfig = {
       colorPrimary: colorPalette.brand[500],
       colorPrimaryHover: colorPalette.brand[700],
     },
+    DatePicker: {
+      cellActiveWithRangeBg: colorPalette.gray[50],
+    },
   },
 };
 

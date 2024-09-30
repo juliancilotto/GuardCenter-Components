@@ -7,6 +7,7 @@ import {
   Avatar,
   Button,
   Checkbox,
+  DatePicker,
   Flex,
   Input,
   InputNumber,
@@ -37,6 +38,10 @@ import {
 } from "@ant-design/icons";
 import { AlertTag } from "@/components/Tags/AlertTag";
 import { HelpCircle } from "@/assets/icons/HelpCircle";
+import ptBR from "antd/es/date-picker/locale/pt_BR";
+import ptBRGlobal from "antd/es/locale/pt_BR";
+
+const { RangePicker } = DatePicker;
 
 const Home: React.FC = () => {
   const [value, setValue] = useState("");
@@ -78,6 +83,25 @@ const Home: React.FC = () => {
   const formatter: NonNullable<SliderSingleProps["tooltip"]>["formatter"] = (
     value
   ) => `${value}%`;
+
+  const brazilianLocale: typeof ptBR = {
+    ...ptBR,
+    lang: {
+      ...ptBR.lang,
+      fieldDateFormat: "DD/MM/YYYY",
+      fieldDateTimeFormat: "DD/MM/YYYY HH:mm:ss",
+      yearFormat: "YYYY",
+      cellYearFormat: "YYYY",
+    },
+  };
+
+  const globalBrazilianLocale: typeof ptBRGlobal = {
+    ...ptBRGlobal,
+    DatePicker: {
+      ...ptBRGlobal.DatePicker!,
+      lang: brazilianLocale.lang,
+    },
+  };
 
   return (
     <div style={{ marginLeft: 10, margin: 10 }}>
@@ -6052,6 +6076,66 @@ const Home: React.FC = () => {
               <HelpCircle />
             </span>
           </Tooltip>
+        </div>
+      </div>
+      <div className="Date Picker">
+        <h2>
+          <strong>Date Picker:</strong>
+        </h2>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Space direction="vertical" size={12}>
+            <RangePicker
+              showTime
+              locale={brazilianLocale}
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "flex-start",
+                gap: "20px",
+              }}
+              renderExtraFooter={() => (
+                <>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "flex-start",
+                      gap: "30px",
+                      paddingBottom: "10px",
+                    }}
+                  >
+                    <Button type="text">Hoje</Button>
+
+                    <Button type="text">Esta Semana</Button>
+                    <Button type="text">Este Mês</Button>
+                    <Button type="text">Este Ano</Button>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "flex-start",
+                      gap: "5px",
+                    }}
+                  >
+                    <Button type="text">Ontem</Button>
+                    <Button type="text">Semana Passada</Button>
+
+                    <Button type="text">Mês Passado</Button>
+
+                    <Button type="text">Ano Passado</Button>
+                  </div>
+                </>
+              )}
+            />
+          </Space>
         </div>
       </div>
     </div>
