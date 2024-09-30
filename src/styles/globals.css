@@ -89,3 +89,7 @@
 .help-circle-icon:hover {
   stroke: #667085;
 }
+
+.ant-picker-cell-inner {
+  border-radius: 50% !important;
+}
