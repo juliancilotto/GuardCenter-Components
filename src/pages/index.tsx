@@ -8,9 +8,11 @@ import {
   Button,
   Checkbox,
   DatePicker,
+  Divider,
   Flex,
   Input,
   InputNumber,
+  Modal,
   Radio,
   Select,
   SelectProps,
@@ -99,12 +101,18 @@ const Home: React.FC = () => {
     },
   };
 
-  const globalBrazilianLocale: typeof ptBRGlobal = {
-    ...ptBRGlobal,
-    DatePicker: {
-      ...ptBRGlobal.DatePicker!,
-      lang: brazilianLocale.lang,
-    },
+  const [open, setOpen] = useState(false);
+
+  const showModal = () => {
+    setOpen(true);
+  };
+
+  const handleOk = () => {
+    setOpen(false);
+  };
+
+  const handleCancel = () => {
+    setOpen(false);
   };
 
   return (
@@ -6142,7 +6150,7 @@ const Home: React.FC = () => {
           </Space>
         </div>
       </div>
-      <div>
+      <div className="Select">
         <h2>
           <strong>Select:</strong>
         </h2>
@@ -6634,6 +6642,81 @@ const Home: React.FC = () => {
               fontWeight: 500,
             }}
           />
+        </div>
+      </div>
+      <div className="Modal">
+        <h2>
+          <strong>Modal</strong>
+        </h2>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Space>
+            <Button type="primary" onClick={showModal}>
+              Open Modal
+            </Button>
+          </Space>
+          <Modal
+            open={open}
+            title="Modal_Title"
+            keyboard
+            onOk={handleOk}
+            width={600}
+            onCancel={handleCancel}
+            footer={(_, { OkBtn, CancelBtn }) => (
+              <>
+                <Divider />
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    gap: "5px",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                      width: "100%",
+                      justifyItems: "space-between",
+                      gap: "5px",
+                    }}
+                  >
+                    <NativeButton type="default">esc</NativeButton>
+                    <text style={{ color: "#667085", fontWeight: 500 }}>
+                      {" "}
+                      para fechar
+                    </text>
+                  </div>
+                  <NativeButton
+                    type="default"
+                    leftIcon={<Sparkle fillColor="black" />}
+                    rightIcon={<Sparkle fillColor="black" />}
+                  >
+                    Button CTA
+                  </NativeButton>
+                  <NativeButton
+                    type="primary"
+                    leftIcon={<Sparkle fillColor="white" />}
+                    rightIcon={<Sparkle fillColor="white" />}
+                  >
+                    Button CTA
+                  </NativeButton>
+                </div>
+              </>
+            )}
+          >
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+          </Modal>
         </div>
       </div>
     </div>

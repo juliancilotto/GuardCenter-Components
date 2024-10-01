@@ -93,3 +93,27 @@
 .ant-picker-cell-inner {
   border-radius: 50% !important;
 }
+
+.ant-modal-title {
+  padding: 16px 24px !important;
+  margin: 0 !important;
+  color: white !important;
+  font-size: 16px !important;
+}
+.ant-modal-footer {
+  padding: 16px 24px !important;
+  margin: 0 !important;
+}
+.ant-modal-body {
+  padding: 16px 24px !important;
+  margin: 0 !important;
+}
+
+.ant-modal-header .ant-modal-close {
+  top: 16px !important;
+  right: 16px !important;
+}
+
+.ant-modal-content {
+  padding: 0 !important;
+}
