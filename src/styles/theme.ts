@@ -48,6 +48,11 @@ const theme: ThemeConfig = {
       optionSelectedBg: "#F9FAFB",
       optionSelectedFontWeight: 500,
     },
+    Modal: {
+      headerBg: colorPalette.brand[500],
+      titleColor: "white",
+      titleFontSize: 16,
+    },
   },
 };
 
