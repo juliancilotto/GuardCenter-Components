@@ -44,6 +44,10 @@ const theme: ThemeConfig = {
     DatePicker: {
       cellActiveWithRangeBg: colorPalette.gray[50],
     },
+    Select: {
+      optionSelectedBg: "#F9FAFB",
+      optionSelectedFontWeight: 500,
+    },
   },
 };
 
