@@ -31,15 +31,19 @@ import {
   ArrowLeftOutlined,
   ArrowRightOutlined,
   ArrowUpOutlined,
+  CheckOutlined,
   CloseOutlined,
   InfoCircleOutlined,
   InfoOutlined,
   PlusOutlined,
+  SearchOutlined,
+  UserOutlined,
 } from "@ant-design/icons";
 import { AlertTag } from "@/components/Tags/AlertTag";
 import { HelpCircle } from "@/assets/icons/HelpCircle";
 import ptBR from "antd/es/date-picker/locale/pt_BR";
 import ptBRGlobal from "antd/es/locale/pt_BR";
+import { Search } from "@/assets/icons/Search";
 
 const { RangePicker } = DatePicker;
 
@@ -6136,6 +6140,500 @@ const Home: React.FC = () => {
               )}
             />
           </Space>
+        </div>
+      </div>
+      <div>
+        <h2>
+          <strong>Select:</strong>
+        </h2>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Select
+            placeholder="Select team member"
+            style={{ width: 200 }}
+            defaultValue="Item1"
+            options={[
+              { value: "Item1", label: "Item 1" },
+              { value: "Item2", label: "Item 2" },
+              { value: "Item3", label: "Item 3" },
+              { value: "Item4", label: "Item 4" },
+            ]}
+            optionLabelProp="label"
+            dropdownRender={(menu) => <div>{menu}</div>}
+            menuItemSelectedIcon={<CheckOutlined />}
+            listHeight={256}
+            dropdownStyle={{
+              fontWeight: 500,
+            }}
+          />
+
+          <Select
+            placeholder="Select team member"
+            style={{ width: 200 }}
+            defaultValue="Item1"
+            options={[
+              {
+                value: "Item1",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Sparkle fillColor="black" />
+                      <text>Item 1</text>
+                    </div>
+                  </>
+                ),
+              },
+              {
+                value: "Item2",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Sparkle fillColor="black" />
+                      <text>Item 2</text>
+                    </div>
+                  </>
+                ),
+              },
+              {
+                value: "Item3",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Sparkle fillColor="black" />
+                      <text>Item 3</text>
+                    </div>
+                  </>
+                ),
+              },
+              {
+                value: "Item4",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Sparkle fillColor="black" />
+                      <text>Item 4</text>
+                    </div>
+                  </>
+                ),
+              },
+            ]}
+            optionLabelProp="value"
+            dropdownRender={(menu) => <div>{menu}</div>}
+            menuItemSelectedIcon={<CheckOutlined />}
+            listHeight={256}
+            dropdownStyle={{
+              fontWeight: 500,
+            }}
+          />
+          <Select
+            placeholder="Select team member"
+            style={{ width: 200 }}
+            defaultValue="Item1"
+            options={[
+              {
+                value: "Item1",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Avatar size={20}>
+                        <UserOutlined />
+                      </Avatar>
+                      <text>Item 1</text>
+                    </div>
+                  </>
+                ),
+              },
+              {
+                value: "Item2",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Avatar size={20}>
+                        <UserOutlined />
+                      </Avatar>
+                      <text>Item 2</text>
+                    </div>
+                  </>
+                ),
+              },
+              {
+                value: "Item3",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Avatar size={20}>
+                        <UserOutlined />
+                      </Avatar>
+                      <text>Item 3</text>
+                    </div>
+                  </>
+                ),
+              },
+              {
+                value: "Item4",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Avatar size={20}>
+                        <UserOutlined />
+                      </Avatar>
+                      <text>Item 4</text>
+                    </div>
+                  </>
+                ),
+              },
+            ]}
+            optionLabelProp="label"
+            dropdownRender={(menu) => <div>{menu}</div>}
+            menuItemSelectedIcon={<CheckOutlined />}
+            listHeight={256}
+            dropdownStyle={{
+              fontWeight: 500,
+            }}
+          />
+          <Select
+            placeholder="Select team member"
+            style={{ width: 200 }}
+            defaultValue="Item1"
+            options={[
+              {
+                value: "Item1",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Dot fillColor="#17B26A" />
+                      <text>Item 1</text>
+                    </div>
+                  </>
+                ),
+              },
+              {
+                value: "Item2",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Dot fillColor="#17B26A" />
+                      <text>Item 2</text>
+                    </div>
+                  </>
+                ),
+              },
+              {
+                value: "Item3",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Dot fillColor="#17B26A" />
+                      <text>Item 3</text>
+                    </div>
+                  </>
+                ),
+              },
+              {
+                value: "Item4",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Dot fillColor="#17B26A" />
+                      <text>Item 4</text>
+                    </div>
+                  </>
+                ),
+              },
+            ]}
+            optionLabelProp="label"
+            dropdownRender={(menu) => <div>{menu}</div>}
+            menuItemSelectedIcon={<CheckOutlined />}
+            listHeight={256}
+            dropdownStyle={{
+              fontWeight: 500,
+            }}
+          />
+          <Select
+            placeholder="Select team member"
+            style={{ width: 200 }}
+            defaultValue="Item1"
+            options={[
+              {
+                value: "Item1",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Avatar size={20}>
+                        <UserOutlined />
+                      </Avatar>
+                      <text>Item 1</text>
+                    </div>
+                  </>
+                ),
+              },
+              {
+                value: "Item2",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Avatar size={20}>
+                        <UserOutlined />
+                      </Avatar>
+                      <text>Item 2</text>
+                    </div>
+                  </>
+                ),
+              },
+              {
+                value: "Item3",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Avatar size={20}>
+                        <UserOutlined />
+                      </Avatar>
+                      <text>Item 3</text>
+                    </div>
+                  </>
+                ),
+              },
+              {
+                value: "Item4",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Avatar size={20}>
+                        <UserOutlined />
+                      </Avatar>
+                      <text>Item 4</text>
+                    </div>
+                  </>
+                ),
+              },
+            ]}
+            // onSearch={}
+            suffixIcon={<Search />}
+            optionLabelProp="value"
+            showSearch
+            dropdownRender={(menu) => <div>{menu}</div>}
+            menuItemSelectedIcon={<CheckOutlined />}
+            listHeight={256}
+            dropdownStyle={{
+              fontWeight: 500,
+            }}
+          />
+          <Select
+            placeholder="Select team member"
+            style={{ width: 200 }}
+            defaultValue="Item1"
+            options={[
+              {
+                value: "Item1",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Avatar size={20}>
+                        <UserOutlined />
+                      </Avatar>
+                      <text>Item 1</text>
+                    </div>
+                  </>
+                ),
+              },
+              {
+                value: "Item2",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Avatar size={20}>
+                        <UserOutlined />
+                      </Avatar>
+                      <text>Item 2</text>
+                    </div>
+                  </>
+                ),
+              },
+              {
+                value: "Item3",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Avatar size={20}>
+                        <UserOutlined />
+                      </Avatar>
+                      <text>Item 3</text>
+                    </div>
+                  </>
+                ),
+              },
+              {
+                value: "Item4",
+                label: (
+                  <>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <Avatar size={20}>
+                        <UserOutlined />
+                      </Avatar>
+                      <text>Item 4</text>
+                    </div>
+                  </>
+                ),
+              },
+            ]}
+            // onSearch={}
+            mode="multiple"
+            suffixIcon={<Search />}
+            optionLabelProp="value"
+            showSearch
+            dropdownRender={(menu) => <div>{menu}</div>}
+            menuItemSelectedIcon={<CheckOutlined />}
+            listHeight={256}
+            dropdownStyle={{
+              fontWeight: 500,
+            }}
+          />
         </div>
       </div>
     </div>
