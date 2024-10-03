@@ -35,14 +35,12 @@ import {
   ArrowUpOutlined,
   CheckOutlined,
   CloseOutlined,
-  InfoOutlined,
   PlusOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 import { AlertTag } from "@/components/Tags/AlertTag";
 import { HelpCircle } from "@/assets/icons/HelpCircle";
 import ptBR from "antd/es/date-picker/locale/pt_BR";
-import ptBRGlobal from "antd/es/locale/pt_BR";
 import { Search } from "@/assets/icons/Search";
 import TeamMembersTable from "@/components/Tables/teamMembers";
 import CustomersTable from "@/components/Tables/customers";
