@@ -121,7 +121,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div style={{ marginLeft: 10, margin: 10 }}>
+    <div style={{ marginLeft: 10, margin: 10, overflowX: "auto" }}>
       <div className="Buttons">
         <h2>
           <strong>Buttons:</strong>
