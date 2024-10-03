@@ -35,10 +35,8 @@ import {
   ArrowUpOutlined,
   CheckOutlined,
   CloseOutlined,
-  InfoCircleOutlined,
   InfoOutlined,
   PlusOutlined,
-  SearchOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 import { AlertTag } from "@/components/Tags/AlertTag";
@@ -48,7 +46,6 @@ import ptBRGlobal from "antd/es/locale/pt_BR";
 import { Search } from "@/assets/icons/Search";
 import TeamMembersTable from "@/components/Tables/teamMembers";
 import CustomersTable from "@/components/Tables/customers";
-import Invoicestable from "@/components/Tables/invoices";
 import InvoicesTable from "@/components/Tables/invoices";
 import FilesUploadTable from "@/components/Tables/filesUploaded";
 
