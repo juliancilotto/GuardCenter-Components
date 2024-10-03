@@ -53,6 +53,9 @@ const theme: ThemeConfig = {
       titleColor: "white",
       titleFontSize: 16,
     },
+    Progress: {
+      defaultColor: "#7F56D9",
+    },
   },
 };
 

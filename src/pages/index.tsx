@@ -35,10 +35,8 @@ import {
   ArrowUpOutlined,
   CheckOutlined,
   CloseOutlined,
-  InfoCircleOutlined,
   InfoOutlined,
   PlusOutlined,
-  SearchOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 import { AlertTag } from "@/components/Tags/AlertTag";
@@ -46,6 +44,10 @@ import { HelpCircle } from "@/assets/icons/HelpCircle";
 import ptBR from "antd/es/date-picker/locale/pt_BR";
 import ptBRGlobal from "antd/es/locale/pt_BR";
 import { Search } from "@/assets/icons/Search";
+import TeamMembersTable from "@/components/Tables/teamMembers";
+import CustomersTable from "@/components/Tables/customers";
+import InvoicesTable from "@/components/Tables/invoices";
+import FilesUploadTable from "@/components/Tables/filesUploaded";
 
 const { RangePicker } = DatePicker;
 
@@ -116,7 +118,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div style={{ marginLeft: 10, margin: 10 }}>
+    <div style={{ marginLeft: 10, margin: 10, overflowX: "auto" }}>
       <div className="Buttons">
         <h2>
           <strong>Buttons:</strong>
@@ -6717,6 +6719,91 @@ const Home: React.FC = () => {
             <p>Some contents...</p>
             <p>Some contents...</p>
           </Modal>
+        </div>
+      </div>
+      <div className="Tables">
+        <h2>
+          <strong>Table:</strong>
+        </h2>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "10px",
+            }}
+          >
+            <h3 style={{ fontWeight: 600, fontSize: "18px", color: "#101828" }}>
+              Team Members
+            </h3>
+            <Flex gap="4px " wrap>
+              <Tag
+                color="#F9F5FF"
+                style={{
+                  borderColor: "#E9D7FE",
+                  color: "#6941C6",
+                  fontWeight: "500",
+                  borderRadius: "16px",
+                  display: "flex",
+                  paddingTop: 0,
+                  alignItems: "center",
+                  gap: "2px",
+                }}
+              >
+                100 users
+              </Tag>
+            </Flex>
+          </div>
+          <TeamMembersTable />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <h3 style={{ fontWeight: 600, fontSize: "18px", color: "#101828" }}>
+            Customers
+          </h3>
+
+          <CustomersTable />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <h3 style={{ fontWeight: 600, fontSize: "18px", color: "#101828" }}>
+            Customers
+          </h3>
+
+          <InvoicesTable />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <h3 style={{ fontWeight: 600, fontSize: "18px", color: "#101828" }}>
+            Customers
+          </h3>
+
+          <FilesUploadTable />
         </div>
       </div>
     </div>
