@@ -6761,49 +6761,18 @@ const Home: React.FC = () => {
               </Tag>
             </Flex>
           </div>
-          <TeamMembersTable />
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
-            marginTop: "10px",
-          }}
-        >
-          <h3 style={{ fontWeight: 600, fontSize: "18px", color: "#101828" }}>
-            Customers
-          </h3>
-
-          <CustomersTable />
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
-            marginTop: "10px",
-          }}
-        >
-          <h3 style={{ fontWeight: 600, fontSize: "18px", color: "#101828" }}>
-            Customers
-          </h3>
-
-          <InvoicesTable />
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
-            marginTop: "10px",
-          }}
-        >
-          <h3 style={{ fontWeight: 600, fontSize: "18px", color: "#101828" }}>
-            Customers
-          </h3>
-
-          <FilesUploadTable />
+          <div>
+            <TeamMembersTable />
+          </div>
+          <div>
+            <CustomersTable />
+          </div>
+          <div>
+            <InvoicesTable />
+          </div>
+          <div>
+            <FilesUploadTable />
+          </div>
         </div>
       </div>
     </div>
