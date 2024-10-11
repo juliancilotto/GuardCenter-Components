@@ -1,5 +1,4 @@
 import { MoreVertical } from "@/assets/icons/MoreVertical";
-import { PdfIcon } from "@/assets/icons/PDFIcon";
 import {
   ArrowLeftOutlined,
   ArrowRightOutlined,
@@ -7,6 +6,7 @@ import {
 } from "@ant-design/icons";
 import { Checkbox, Table, TableProps } from "antd";
 import { NativeButton } from "../Button/nativeButton";
+import { PdfIcon } from "@/assets/icons/PDFIcon";
 
 interface DataType {
   key: string;
