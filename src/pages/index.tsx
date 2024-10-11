@@ -165,18 +165,18 @@ const Home: React.FC = () => {
               type="default"
               leftIcon={<Sparkle fillColor="black" />}
               rightIcon={<Sparkle fillColor="black" />}
-              variant="default"
+              colorVariant="default"
             >
               Button CTA
             </NativeButton>
             <NativeButton
               type="default"
               leftIcon={<Dot fillColor="#17B26A" />}
-              variant="default"
+              colorVariant="default"
             >
               Button CTA
             </NativeButton>
-            <NativeButton type="default" variant="default">
+            <NativeButton type="default" colorVariant="default">
               <Sparkle fillColor="black" />
             </NativeButton>
           </div>
@@ -207,18 +207,18 @@ const Home: React.FC = () => {
               type="default"
               leftIcon={<Sparkle fillColor="black" />}
               rightIcon={<Sparkle fillColor="black" />}
-              variant="green"
+              colorVariant="green"
             >
               Button CTA
             </NativeButton>
             <NativeButton
               type="default"
               leftIcon={<Dot fillColor="#17B26A" />}
-              variant="green"
+              colorVariant="green"
             >
               Button CTA
             </NativeButton>
-            <NativeButton type="default" variant="green">
+            <NativeButton type="default" colorVariant="green">
               <Sparkle fillColor="black" />
             </NativeButton>
           </div>
@@ -286,18 +286,18 @@ const Home: React.FC = () => {
               type="text"
               leftIcon={<Sparkle fillColor="black" />}
               rightIcon={<Sparkle fillColor="black" />}
-              variant="green"
+              colorVariant="green"
             >
               Button CTA
             </NativeButton>
             <NativeButton
               type="text"
               leftIcon={<Dot fillColor="#17B26A" />}
-              variant="green"
+              colorVariant="green"
             >
               Button CTA
             </NativeButton>
-            <NativeButton type="text" variant="green">
+            <NativeButton type="text" colorVariant="green">
               <Sparkle fillColor="black" />
             </NativeButton>
           </div>

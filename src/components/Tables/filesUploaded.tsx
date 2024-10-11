@@ -334,7 +334,7 @@ const FilesUploadTable: React.FC = () => (
               <NativeButton
                 type="default"
                 leftIcon={<ArrowLeftOutlined />}
-                variant="default"
+                colorVariant="default"
               >
                 Previous
               </NativeButton>
@@ -345,7 +345,7 @@ const FilesUploadTable: React.FC = () => (
               <NativeButton
                 type="default"
                 rightIcon={<ArrowRightOutlined />}
-                variant="default"
+                colorVariant="default"
               >
                 Next
               </NativeButton>

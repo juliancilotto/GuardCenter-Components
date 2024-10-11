@@ -270,7 +270,7 @@ const InvoicesTable: React.FC = () => (
               <NativeButton
                 type="default"
                 leftIcon={<ArrowLeftOutlined />}
-                variant="default"
+                colorVariant="default"
               >
                 Previous
               </NativeButton>
@@ -281,7 +281,7 @@ const InvoicesTable: React.FC = () => (
               <NativeButton
                 type="default"
                 rightIcon={<ArrowRightOutlined />}
-                variant="default"
+                colorVariant="default"
               >
                 Next
               </NativeButton>
