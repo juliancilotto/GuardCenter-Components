@@ -1,4 +1,4 @@
-/** u/type {import('next').NextConfig} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
@@ -6,6 +6,8 @@ const nextConfig = {
     "rc-util",
     "rc-pagination",
     "rc-picker",
+    "rc-tree",
+    "rc-table",
     "@ant-design/icons",
     "@ant-design/icons-svg",
   ],

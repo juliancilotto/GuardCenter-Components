@@ -12,26 +12,28 @@ interface DoubleIconButtonProps extends ButtonProps {
   children?: React.ReactNode;
   type: "primary" | "default" | "dashed" | "link" | "text";
   size?: "large" | "small" | "middle";
-  variant?: "default" | "green";
+  colorVariant?: "default" | "green";
 }
 
 export const NativeButton: React.FC<DoubleIconButtonProps> = ({
   leftIcon,
   rightIcon,
   children,
-  variant = "default",
+  colorVariant = "default",
   ...props
 }) => {
   const defaultColorClasName =
-    props.type && props.type !== "primary" && variant === VarientEnum.default
+    props.type &&
+    props.type !== "primary" &&
+    colorVariant === VarientEnum.default
       ? "default-button"
       : "";
   const defaultGreenColorClasName =
-    props.type && props.type !== "primary" && variant === VarientEnum.green
+    props.type && props.type !== "primary" && colorVariant === VarientEnum.green
       ? "green-default-button"
       : "";
   const textColorClasName =
-    props.type && props.type === "text" && variant === VarientEnum.green
+    props.type && props.type === "text" && colorVariant === VarientEnum.green
       ? "green-text-button"
       : "";
 

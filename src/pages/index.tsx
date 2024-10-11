@@ -42,8 +42,11 @@ import {
 import { AlertTag } from "@/components/Tags/AlertTag";
 import { HelpCircle } from "@/assets/icons/HelpCircle";
 import ptBR from "antd/es/date-picker/locale/pt_BR";
-import ptBRGlobal from "antd/es/locale/pt_BR";
 import { Search } from "@/assets/icons/Search";
+import TeamMembersTable from "@/components/Tables/teamMembers";
+import CustomersTable from "@/components/Tables/customers";
+import InvoicesTable from "@/components/Tables/invoices";
+import FilesUploadTable from "@/components/Tables/filesUploaded";
 
 const { RangePicker } = DatePicker;
 
@@ -162,18 +165,18 @@ const Home: React.FC = () => {
               type="default"
               leftIcon={<Sparkle fillColor="black" />}
               rightIcon={<Sparkle fillColor="black" />}
-              variant="default"
+              colorVariant="default"
             >
               Button CTA
             </NativeButton>
             <NativeButton
               type="default"
               leftIcon={<Dot fillColor="#17B26A" />}
-              variant="default"
+              colorVariant="default"
             >
               Button CTA
             </NativeButton>
-            <NativeButton type="default" variant="default">
+            <NativeButton type="default" colorVariant="default">
               <Sparkle fillColor="black" />
             </NativeButton>
           </div>
@@ -204,18 +207,18 @@ const Home: React.FC = () => {
               type="default"
               leftIcon={<Sparkle fillColor="black" />}
               rightIcon={<Sparkle fillColor="black" />}
-              variant="green"
+              colorVariant="green"
             >
               Button CTA
             </NativeButton>
             <NativeButton
               type="default"
               leftIcon={<Dot fillColor="#17B26A" />}
-              variant="green"
+              colorVariant="green"
             >
               Button CTA
             </NativeButton>
-            <NativeButton type="default" variant="green">
+            <NativeButton type="default" colorVariant="green">
               <Sparkle fillColor="black" />
             </NativeButton>
           </div>
@@ -283,18 +286,18 @@ const Home: React.FC = () => {
               type="text"
               leftIcon={<Sparkle fillColor="black" />}
               rightIcon={<Sparkle fillColor="black" />}
-              variant="green"
+              colorVariant="green"
             >
               Button CTA
             </NativeButton>
             <NativeButton
               type="text"
               leftIcon={<Dot fillColor="#17B26A" />}
-              variant="green"
+              colorVariant="green"
             >
               Button CTA
             </NativeButton>
-            <NativeButton type="text" variant="green">
+            <NativeButton type="text" colorVariant="green">
               <Sparkle fillColor="black" />
             </NativeButton>
           </div>
@@ -6715,6 +6718,18 @@ const Home: React.FC = () => {
             <p>Some contents...</p>
             <p>Some contents...</p>
           </Modal>
+        </div>
+        <div>
+          <TeamMembersTable />
+        </div>
+        <div>
+          <CustomersTable />
+        </div>
+        <div>
+          <InvoicesTable />
+        </div>
+        <div>
+          <FilesUploadTable />
         </div>
       </div>
     </div>
