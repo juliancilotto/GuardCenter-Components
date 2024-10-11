@@ -1,19 +1,17 @@
-import React from "react";
-import { Avatar, Checkbox, Flex, Table, Tag } from "antd";
-import type { TableProps } from "antd";
+import { EyeOpen } from "@/assets/icons/EyeOpen";
 import { SmallDot } from "@/assets/icons/SmallDot";
 import {
   ArrowDownOutlined,
   ArrowLeftOutlined,
   ArrowRightOutlined,
+  DeleteOutlined,
+  DownloadOutlined,
+  EditOutlined,
   InfoCircleOutlined,
 } from "@ant-design/icons";
-import { Copy } from "@/assets/icons/Copy";
-import { Delete } from "@/assets/icons/Delete";
-import { EyeOpen } from "@/assets/icons/Eye";
-import { Download } from "@/assets/icons/Download";
-import { Edit } from "@/assets/icons/Edit";
+import { Avatar, Checkbox, Flex, Table, TableProps, Tag } from "antd";
 import { NativeButton } from "../Button/nativeButton";
+import { Copy } from "@/assets/icons/Copy";
 
 interface DataType {
   key: string;
@@ -212,9 +210,12 @@ const columns: TableProps<DataType>["columns"] = [
       >
         <EyeOpen fillColor="#0D231F" />
         <Copy fillColor="#0D231F" />
-        <Download fillColor="#0D231F" />
+        <DownloadOutlined />
+        <EditOutlined />
+        <DeleteOutlined />
+        {/* <Download fillColor="#0D231F" />
         <Edit fillColor="#0D231F" />
-        <Delete fillColor="#0D231F" />
+        <Delete fillColor="#0D231F" /> */}
       </div>
     ),
   },

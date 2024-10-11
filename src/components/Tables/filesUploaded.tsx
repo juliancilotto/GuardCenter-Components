@@ -1,14 +1,12 @@
-import React from "react";
-import { Avatar, Checkbox, Table } from "antd";
-import type { TableProps } from "antd";
+import { MoreVertical } from "@/assets/icons/MoreVertical";
+import { PdfIcon } from "@/assets/icons/PDFIcon";
 import {
   ArrowLeftOutlined,
   ArrowRightOutlined,
   InfoCircleOutlined,
 } from "@ant-design/icons";
+import { Checkbox, Table, TableProps } from "antd";
 import { NativeButton } from "../Button/nativeButton";
-import { PdfIcon } from "@/assets/icons/PDF";
-import { MoreVertical } from "@/assets/icons/MoreVertical";
 
 interface DataType {
   key: string;

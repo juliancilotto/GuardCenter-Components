@@ -1,6 +1,4 @@
-import React from "react";
-import { Avatar, Flex, Progress, Table, Tag } from "antd";
-import type { TableProps } from "antd";
+import { MoreVertical } from "@/assets/icons/MoreVertical";
 import { SmallDot } from "@/assets/icons/SmallDot";
 import {
   AntDesignOutlined,
@@ -9,8 +7,8 @@ import {
   ArrowRightOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import { Avatar, Flex, Progress, Table, TableProps, Tag } from "antd";
 import { NativeButton } from "../Button/nativeButton";
-import { MoreVertical } from "@/assets/icons/MoreVertical";
 
 interface DataType {
   company: string;

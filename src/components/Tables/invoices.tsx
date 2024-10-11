@@ -1,6 +1,3 @@
-import React from "react";
-import { Avatar, Button, Checkbox, Flex, Table, Tag } from "antd";
-import type { TableProps } from "antd";
 import {
   ArrowDownOutlined,
   ArrowLeftOutlined,
@@ -9,6 +6,7 @@ import {
   CloseOutlined,
   InfoCircleOutlined,
 } from "@ant-design/icons";
+import { Avatar, Button, Checkbox, Flex, Table, TableProps, Tag } from "antd";
 import { NativeButton } from "../Button/nativeButton";
 
 enum StatusEnum {
