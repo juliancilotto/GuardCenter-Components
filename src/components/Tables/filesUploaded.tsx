@@ -6,7 +6,6 @@ import {
 } from "@ant-design/icons";
 import { Checkbox, Table, TableProps } from "antd";
 import { NativeButton } from "../Button/nativeButton";
-import { PdfIcon } from "@/assets/icons/PDFIcon";
 
 interface DataType {
   key: string;
@@ -32,7 +31,7 @@ const columns: TableProps<DataType>["columns"] = [
     render: (text) => (
       <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
         <Checkbox style={{ marginRight: 8 }} />
-        <PdfIcon />
+
         <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
           <div style={{ fontSize: "12px", fontWeight: 600, color: "#0C111D" }}>
             {text}
