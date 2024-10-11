@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Checkbox, Flex, Progress, Space, Table, Tag } from "antd";
+import { Avatar, Flex, Progress, Table, Tag } from "antd";
 import type { TableProps } from "antd";
 import { SmallDot } from "@/assets/icons/SmallDot";
 import {
@@ -7,16 +7,9 @@ import {
   ArrowDownOutlined,
   ArrowLeftOutlined,
   ArrowRightOutlined,
-  InfoCircleOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Copy } from "@/assets/icons/Copy";
-import { Delete } from "@/assets/icons/Delete";
-import { EyeOpen } from "@/assets/icons/Eye";
-import { Download } from "@/assets/icons/Download";
-import { Edit } from "@/assets/icons/Edit";
 import { NativeButton } from "../Button/nativeButton";
-import { ArrowRight } from "@/assets/icons/ArrowRight";
 import { MoreVertical } from "@/assets/icons/MoreVertical";
 
 interface DataType {

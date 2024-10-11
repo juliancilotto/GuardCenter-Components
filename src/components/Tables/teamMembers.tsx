@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Checkbox, Flex, Space, Table, Tag } from "antd";
+import { Avatar, Checkbox, Flex, Table, Tag } from "antd";
 import type { TableProps } from "antd";
 import { SmallDot } from "@/assets/icons/SmallDot";
 import {
@@ -14,7 +14,6 @@ import { EyeOpen } from "@/assets/icons/Eye";
 import { Download } from "@/assets/icons/Download";
 import { Edit } from "@/assets/icons/Edit";
 import { NativeButton } from "../Button/nativeButton";
-import { ArrowRight } from "@/assets/icons/ArrowRight";
 
 interface DataType {
   key: string;

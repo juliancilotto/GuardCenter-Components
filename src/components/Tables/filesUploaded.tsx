@@ -1,20 +1,12 @@
 import React from "react";
-import { Avatar, Checkbox, Flex, Space, Table, Tag } from "antd";
+import { Avatar, Checkbox, Table } from "antd";
 import type { TableProps } from "antd";
-import { SmallDot } from "@/assets/icons/SmallDot";
 import {
-  ArrowDownOutlined,
   ArrowLeftOutlined,
   ArrowRightOutlined,
   InfoCircleOutlined,
 } from "@ant-design/icons";
-import { Copy } from "@/assets/icons/Copy";
-import { Delete } from "@/assets/icons/Delete";
-import { EyeOpen } from "@/assets/icons/Eye";
-import { Download } from "@/assets/icons/Download";
-import { Edit } from "@/assets/icons/Edit";
 import { NativeButton } from "../Button/nativeButton";
-import { ArrowRight } from "@/assets/icons/ArrowRight";
 import { PdfIcon } from "@/assets/icons/PDF";
 import { MoreVertical } from "@/assets/icons/MoreVertical";
 

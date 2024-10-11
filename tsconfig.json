@@ -6,9 +6,6 @@
       "esnext"
     ],
     "allowJs": true,
-    "module": "ESNext",
-    "target": "ES6",
-    "jsx": "preserve",
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
@@ -17,6 +14,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
+    "module": "ESNext",
+    "target": "ES6",
+    "jsx": "preserve",
     "paths": {
       "@/*": [
         "./src/*"
