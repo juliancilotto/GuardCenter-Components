@@ -12,7 +12,9 @@ import {
   Flex,
   Input,
   InputNumber,
+  message,
   Modal,
+  Progress,
   Radio,
   Select,
   SelectProps,
@@ -22,6 +24,9 @@ import {
   Switch,
   Tag,
   Tooltip,
+  Upload,
+  UploadFile,
+  UploadProps,
 } from "antd";
 import { InfoCircle } from "@/assets/icons/InfoCircle";
 import { ExclamationCircle } from "@/assets/icons/ExclamationCircle";
@@ -35,6 +40,11 @@ import {
   ArrowUpOutlined,
   CheckOutlined,
   CloseOutlined,
+  DeleteOutlined,
+  FileImageOutlined,
+  FileOutlined,
+  FilePdfOutlined,
+  InboxOutlined,
   InfoOutlined,
   PlusOutlined,
   UserOutlined,
@@ -47,8 +57,136 @@ import TeamMembersTable from "@/components/Tables/teamMembers";
 import CustomersTable from "@/components/Tables/customers";
 import InvoicesTable from "@/components/Tables/invoices";
 import FilesUploadTable from "@/components/Tables/filesUploaded";
+import { UploadBox } from "@/assets/icons/UploadBox";
+import { PdfIcon } from "@/assets/icons/PdfIcon";
+import { Delete } from "@/assets/icons/Delete";
+import { FigIcon } from "@/assets/icons/FigIcon";
+import { Mp4Icon } from "@/assets/icons/Mp4Icon";
 
 const { RangePicker } = DatePicker;
+
+const { Dragger } = Upload;
+
+const fileList: UploadFile[] = [
+  {
+    uid: "0",
+    name: "Tech design requirements.pdf",
+    status: "uploading",
+    percent: 10,
+  },
+  {
+    uid: "-1",
+    name: "Dashboard prototype FINAL.png",
+    status: "uploading",
+    percent: 100,
+  },
+  {
+    uid: "-2",
+    name: "Daashboard recording.mp4",
+    status: "uploading",
+    percent: 55,
+  },
+];
+
+const getFileIcon = (fileName: string) => {
+  const extension = fileName.split(".").pop()?.toLowerCase();
+  switch (extension) {
+    case "pdf":
+      return <PdfIcon />;
+    case "png":
+      return <FigIcon />;
+    case "jpg":
+      return <FigIcon />;
+    case "jpeg":
+      return <FigIcon />;
+    case "mp4":
+      return <Mp4Icon />;
+    default:
+      return <PdfIcon />;
+  }
+};
+
+const props: UploadProps = {
+  name: "file",
+  multiple: true,
+  action: "https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload",
+  onChange(info) {
+    const { status } = info.file;
+    if (status !== "uploading") {
+      console.log(info.file, info.fileList);
+    }
+    if (status === "done") {
+      message.success(`${info.file.name} file uploaded successfully.`);
+    } else if (status === "error") {
+      message.error(`${info.file.name} file upload failed.`);
+    }
+  },
+  onDrop(e) {
+    console.log("Dropped files", e.dataTransfer.files);
+  },
+  defaultFileList: fileList,
+  itemRender: (originNode, file, fileList, actions) => {
+    const isUploadComplete = file.percent === 100;
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "10px 0",
+          borderBottom: "1px solid #f0f0f0",
+        }}
+      >
+        <Space>
+          {getFileIcon(file.name)}
+
+          <div style={{ marginLeft: "10px" }}>
+            <div style={{ fontSize: "14px", fontWeight: "500" }}>
+              {file.name}
+            </div>
+
+            {file.status === "uploading" && (
+              <Progress
+                percent={file.percent}
+                size="small"
+                strokeColor="#27665A"
+              />
+            )}
+          </div>
+        </Space>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          {isUploadComplete && (
+            <Checkbox
+              style={{
+                marginBottom: "5px",
+              }}
+            />
+          )}
+
+          <Button
+            style={{
+              color: "black",
+              fontSize: "18px",
+              cursor: "pointer",
+              border: "none",
+              boxShadow: "none",
+            }}
+            onClick={() => actions.remove()}
+          >
+            <Delete fillColor="#667085" />
+          </Button>
+        </div>
+      </div>
+    );
+  },
+};
 
 const Home: React.FC = () => {
   const [value, setValue] = useState("");
@@ -6719,17 +6857,118 @@ const Home: React.FC = () => {
             <p>Some contents...</p>
           </Modal>
         </div>
-        <div>
-          <TeamMembersTable />
+      </div>
+      <div className="Tables:">
+        <h2>
+          <strong>Tabelas</strong>
+        </h2>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <div>
+            <TeamMembersTable />
+          </div>
+          <div>
+            <CustomersTable />
+          </div>
+          <div>
+            <InvoicesTable />
+          </div>
+          <div>
+            <FilesUploadTable />
+          </div>
         </div>
-        <div>
-          <CustomersTable />
+      </div>
+      <div className="File Upload:">
+        <h2>
+          <strong>File Upload:</strong>
+        </h2>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Space>
+            <Dragger
+              {...props}
+              defaultFileList={fileList}
+              style={{ backgroundColor: "white", border: " 2px solid #EAECF0" }}
+              className="file-upload"
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "2px",
+                  alignItems: "center",
+                  marginLeft: "80px",
+                  marginRight: "80px",
+                }}
+              >
+                <p>
+                  <UploadBox />
+                </p>
+                <p style={{ color: "#475467" }}>
+                  <strong style={{ color: "#1A443C" }}>
+                    Clique para fazer o upload
+                  </strong>{" "}
+                  ou arraste e solte
+                </p>
+                <p style={{ color: "#475467" }}>SVG, PNG, JPG or PDF</p>
+              </div>
+            </Dragger>
+          </Space>
         </div>
-        <div>
-          <InvoicesTable />
-        </div>
-        <div>
-          <FilesUploadTable />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <Space>
+            <Dragger
+              style={{
+                backgroundColor: "#F9FAFB",
+                border: " 2px solid #EAECF0",
+              }}
+              className={
+                props.disabled ? "file-upload disabled" : "file-upload"
+              }
+              disabled
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "2px",
+                  alignItems: "center",
+                  marginLeft: "80px",
+                  marginRight: "80px",
+                }}
+              >
+                <p>
+                  <UploadBox />
+                </p>
+                <p style={{ color: "#475467" }}>
+                  <strong style={{ color: "#98A2B3" }}>
+                    Clique para fazer o upload
+                  </strong>{" "}
+                  ou arraste e solte
+                </p>
+                <p style={{ color: "#475467" }}>SVG, PNG, JPG or PDF</p>
+              </div>
+            </Dragger>
+          </Space>
         </div>
       </div>
     </div>
