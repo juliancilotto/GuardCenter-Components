@@ -40,12 +40,6 @@ import {
   ArrowUpOutlined,
   CheckOutlined,
   CloseOutlined,
-  DeleteOutlined,
-  FileImageOutlined,
-  FileOutlined,
-  FilePdfOutlined,
-  InboxOutlined,
-  InfoOutlined,
   PlusOutlined,
   UserOutlined,
 } from "@ant-design/icons";
