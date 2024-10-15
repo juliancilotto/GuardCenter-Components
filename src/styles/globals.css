@@ -117,3 +117,15 @@
 .ant-modal-content {
   padding: 0 !important;
 }
+
+.ant-upload:hover {
+  background-color: white !important;
+  border-width: "2px" !important;
+  border-color: #27665a !important;
+}
+
+.ant-upload-disabled:hover {
+  background-color: #f9fafb !important;
+  border-color: #eaecf0 !important;
+  cursor: not-allowed !important;
+}
