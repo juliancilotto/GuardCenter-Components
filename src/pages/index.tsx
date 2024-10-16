@@ -57,6 +57,7 @@ import { PdfIcon } from "@/assets/icons/PdfIcon";
 import { FigIcon } from "@/assets/icons/FigIcon";
 import { Mp4Icon } from "@/assets/icons/Mp4Icon";
 import { Delete } from "@/assets/icons/Delete";
+import { Times } from "@/assets/icons/Times";
 
 const { RangePicker } = DatePicker;
 
@@ -7034,6 +7035,7 @@ const Home: React.FC = () => {
             keyboard
             onOk={handleOk}
             width={600}
+            closeIcon={<Times fillColor="white" />}
             onCancel={handleCancel}
             footer={(_, { OkBtn, CancelBtn }) => (
               <>
