@@ -129,3 +129,8 @@
   border-color: #eaecf0 !important;
   cursor: not-allowed !important;
 }
+
+.ant-select-selector {
+  padding-top: 2 !important;
+  padding-bottom: 2 !important;
+}

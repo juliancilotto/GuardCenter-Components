@@ -655,7 +655,7 @@ const Home: React.FC = () => {
                 <Input
                   type="datetime-local"
                   suffix={<InfoCircle fillColor="#98A2B3" />}
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", paddingBlock: 4 }}
                 />
               </div>
             </Space.Compact>
@@ -664,7 +664,7 @@ const Home: React.FC = () => {
                 <Input
                   type="datetime-local"
                   suffix={<InfoCircle fillColor="#98A2B3" />}
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", paddingBlock: 4 }}
                   className="input-disabled"
                   disabled
                 />
@@ -676,7 +676,7 @@ const Home: React.FC = () => {
                   type="datetime-local"
                   status="error"
                   suffix={<ExclamationCircle fillColor="#F04438" />}
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", paddingBlock: 4 }}
                 />
               </div>
             </Space.Compact>
@@ -881,47 +881,43 @@ const Home: React.FC = () => {
             }}
             className="select-input"
           >
-            <Space>
-              <div>
-                <Select
-                  mode="multiple"
-                  allowClear
-                  style={{ width: "200px" }}
-                  placeholder="Please select"
-                  defaultValue={["Carla", "Maria"]}
-                  onChange={handleSelectChange}
-                  options={options}
-                />
-              </div>
-            </Space>
-            <Space>
-              <div>
-                <Select
-                  mode="multiple"
-                  allowClear
-                  style={{ width: "200px" }}
-                  placeholder="Please select"
-                  defaultValue={["Carla", "Maria"]}
-                  onChange={handleSelectChange}
-                  options={options}
-                  disabled
-                />
-              </div>
-            </Space>
-            <Space>
-              <div>
-                <Select
-                  mode="multiple"
-                  allowClear
-                  status="error"
-                  style={{ width: "200px" }}
-                  placeholder="Please select"
-                  defaultValue={["Carla", "Maria"]}
-                  onChange={handleSelectChange}
-                  options={options}
-                />
-              </div>
-            </Space>
+            <div>
+              <Select
+                mode="multiple"
+                allowClear
+                style={{ width: "200px" }}
+                placeholder="Please select"
+                defaultValue={["Carla", "Maria"]}
+                onChange={handleSelectChange}
+                options={options}
+              />
+            </div>
+
+            <div>
+              <Select
+                mode="multiple"
+                allowClear
+                style={{ width: "200px" }}
+                placeholder="Please select"
+                defaultValue={["Carla", "Maria"]}
+                onChange={handleSelectChange}
+                options={options}
+                disabled
+              />
+            </div>
+
+            <div>
+              <Select
+                mode="multiple"
+                allowClear
+                status="error"
+                style={{ width: "200px" }}
+                placeholder="Please select"
+                defaultValue={["Carla", "Maria"]}
+                onChange={handleSelectChange}
+                options={options}
+              />
+            </div>
           </div>
           <div
             style={{
@@ -932,41 +928,55 @@ const Home: React.FC = () => {
             }}
             className="clipboard-input"
           >
-            <Space.Compact style={{ width: "200px" }}>
+            <Space.Compact style={{ width: "250px" }}>
               <Input
                 suffix={<InfoCircle fillColor="#98A2B3" />}
-                style={{ width: "200px" }}
+                style={{ width: "250px" }}
                 placeholder="Content holder"
+                addonAfter={
+                  <Button
+                    type="text"
+                    icon={<Copy fillColor="#344054" />}
+                    style={{ backgroundColor: "white" }}
+                  >
+                    Copy
+                  </Button>
+                }
               />
-              <Button type="default" icon={<Copy fillColor="#344054" />}>
-                Copy
-              </Button>
             </Space.Compact>
-            <Space.Compact style={{ width: "200px" }}>
+            <Space.Compact style={{ width: "250px" }}>
               <Input
                 suffix={<InfoCircle fillColor="#98A2B3" />}
-                style={{ width: "200px" }}
+                style={{ width: "250px" }}
                 placeholder="Content holder"
                 disabled
+                addonAfter={
+                  <Button
+                    type="text"
+                    icon={<Copy fillColor="#344054" />}
+                    disabled
+                  >
+                    Copy
+                  </Button>
+                }
               />
-              <Button
-                type="default"
-                icon={<Copy fillColor="#344054" isDisabled />}
-                disabled
-              >
-                Copy
-              </Button>
             </Space.Compact>
-            <Space.Compact style={{ width: "200px" }}>
+            <Space.Compact style={{ width: "250px" }}>
               <Input
                 status="error"
                 suffix={<InfoCircle fillColor="#98A2B3" />}
-                style={{ width: "200px" }}
+                style={{ width: "250px" }}
                 placeholder="Content holder"
+                addonAfter={
+                  <Button
+                    type="text"
+                    icon={<Copy fillColor="#344054" />}
+                    style={{ backgroundColor: "white" }}
+                  >
+                    Copy
+                  </Button>
+                }
               />
-              <Button type="default" icon={<Copy fillColor="#344054" />}>
-                Copy
-              </Button>
             </Space.Compact>
           </div>
         </div>
