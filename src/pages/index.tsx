@@ -58,6 +58,7 @@ import { FigIcon } from "@/assets/icons/FigIcon";
 import { Mp4Icon } from "@/assets/icons/Mp4Icon";
 import { Delete } from "@/assets/icons/Delete";
 import { Times } from "@/assets/icons/Times";
+import dayjs, { Dayjs } from "dayjs";
 
 const { RangePicker } = DatePicker;
 
@@ -366,6 +367,75 @@ const Home: React.FC = () => {
 
   const handleCancel = () => {
     setOpen(false);
+  };
+
+  const getToday = (): [Dayjs, Dayjs] => {
+    const today = new Date();
+    return [dayjs(today), dayjs(today)];
+  };
+
+  const getYesterday = (): [Dayjs, Dayjs] => {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    return [dayjs(yesterday), dayjs(yesterday)];
+  };
+
+  const getThisWeek = (): [Dayjs, Dayjs] => {
+    const today = new Date();
+    const firstDayOfWeek = new Date(
+      today.setDate(today.getDate() - today.getDay())
+    );
+    const lastDayOfWeek = new Date(today.setDate(firstDayOfWeek.getDate() + 6));
+    return [dayjs(firstDayOfWeek), dayjs(lastDayOfWeek)];
+  };
+
+  const getLastWeek = (): [Dayjs, Dayjs] => {
+    const today = new Date();
+    const lastWeekStart = new Date(
+      today.setDate(today.getDate() - today.getDay() - 7)
+    );
+    const lastWeekEnd = new Date(today.setDate(lastWeekStart.getDate() + 6));
+    return [dayjs(lastWeekStart), dayjs(lastWeekEnd)];
+  };
+
+  const getThisMonth = (): [Dayjs, Dayjs] => {
+    const today = new Date();
+    const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+    const lastDayOfMonth = new Date(
+      today.getFullYear(),
+      today.getMonth() + 1,
+      0
+    );
+    return [dayjs(firstDayOfMonth), dayjs(lastDayOfMonth)];
+  };
+
+  const getLastMonth = (): [Dayjs, Dayjs] => {
+    const today = new Date();
+    const firstDayOfLastMonth = new Date(
+      today.getFullYear(),
+      today.getMonth() - 1,
+      1
+    );
+    const lastDayOfLastMonth = new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      0
+    );
+    return [dayjs(firstDayOfLastMonth), dayjs(lastDayOfLastMonth)];
+  };
+
+  const getThisYear = (): [Dayjs, Dayjs] => {
+    const today = new Date();
+    const firstDayOfYear = new Date(today.getFullYear(), 0, 1);
+    const lastDayOfYear = new Date(today.getFullYear(), 11, 31);
+    return [dayjs(firstDayOfYear), dayjs(lastDayOfYear)];
+  };
+
+  const getLastYear = (): [Dayjs, Dayjs] => {
+    const today = new Date();
+    const firstDayOfLastYear = new Date(today.getFullYear() - 1, 0, 1);
+    const lastDayOfLastYear = new Date(today.getFullYear() - 1, 11, 31);
+    return [dayjs(firstDayOfLastYear), dayjs(lastDayOfLastYear)];
   };
 
   return (
@@ -6601,6 +6671,16 @@ const Home: React.FC = () => {
           <Space direction="vertical" size={12}>
             <RangePicker
               showTime
+              presets={[
+                { label: "Hoje", value: getToday() },
+                { label: "Ontem", value: getYesterday() },
+                { label: "Essa Semana", value: getThisWeek() },
+                { label: "Semana Passada", value: getLastWeek() },
+                { label: "Esse Mês", value: getThisMonth() },
+                { label: "Mês Passado", value: getLastMonth() },
+                { label: "Esse Ano", value: getThisYear() },
+                { label: "Ano Passado", value: getLastYear() },
+              ]}
               locale={brazilianLocale}
               style={{
                 display: "flex",
@@ -6608,40 +6688,6 @@ const Home: React.FC = () => {
                 alignItems: "flex-start",
                 gap: "20px",
               }}
-              renderExtraFooter={() => (
-                <>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "flex-start",
-                      gap: "30px",
-                      paddingBottom: "10px",
-                    }}
-                  >
-                    <Button type="text">Hoje</Button>
-
-                    <Button type="text">Esta Semana</Button>
-                    <Button type="text">Este Mês</Button>
-                    <Button type="text">Este Ano</Button>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "flex-start",
-                      gap: "5px",
-                    }}
-                  >
-                    <Button type="text">Ontem</Button>
-                    <Button type="text">Semana Passada</Button>
-
-                    <Button type="text">Mês Passado</Button>
-
-                    <Button type="text">Ano Passado</Button>
-                  </div>
-                </>
-              )}
             />
           </Space>
         </div>
