@@ -27,11 +27,15 @@ const theme: ThemeConfig = {
     Input: {
       activeShadow: "0 0 0 3px rgba(110, 152, 144, 0.2)",
       errorActiveShadow: "0 0 0 3px rgba(240, 68, 56, 0.24)",
+      paddingBlock: 5,
+      addonBg: "white",
     },
     InputNumber: {
       activeShadow: "0 0 0 3px rgba(110, 152, 144, 0.2)",
       errorActiveShadow: "0 0 0 3px rgba(240, 68, 56, 0.24)",
+      paddingBlock: 5,
     },
+
     Slider: {
       handleColor: colorPalette.brand[500],
       railBg: "#EAECF0",
@@ -47,6 +51,7 @@ const theme: ThemeConfig = {
     Select: {
       optionSelectedBg: "#F9FAFB",
       optionSelectedFontWeight: 500,
+      multipleItemHeight: 26,
     },
     Modal: {
       headerBg: colorPalette.brand[500],

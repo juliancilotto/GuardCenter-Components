@@ -57,6 +57,7 @@ import { PdfIcon } from "@/assets/icons/PdfIcon";
 import { FigIcon } from "@/assets/icons/FigIcon";
 import { Mp4Icon } from "@/assets/icons/Mp4Icon";
 import { Delete } from "@/assets/icons/Delete";
+import { Times } from "@/assets/icons/Times";
 
 const { RangePicker } = DatePicker;
 
@@ -128,8 +129,11 @@ const props: UploadProps = {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: "10px 0",
-          borderBottom: "1px solid #f0f0f0",
+          padding: "12px",
+          marginTop: "10px",
+
+          border: "1px solid #EAECF0",
+          borderRadius: "12px",
         }}
       >
         <Space>
@@ -177,6 +181,121 @@ const props: UploadProps = {
           >
             <Delete fillColor="#667085" />
           </Button>
+        </div>
+      </div>
+    );
+  },
+};
+
+const circleProps: UploadProps = {
+  name: "file",
+  multiple: true,
+  action: "https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload",
+  onChange(info) {
+    const { status } = info.file;
+    if (status !== "uploading") {
+      console.log(info.file, info.fileList);
+    }
+    if (status === "done") {
+      message.success(`${info.file.name} file uploaded successfully.`);
+    } else if (status === "error") {
+      message.error(`${info.file.name} file upload failed.`);
+    }
+  },
+  onDrop(e) {
+    console.log("Dropped files", e.dataTransfer.files);
+  },
+  defaultFileList: fileList,
+  itemRender: (originNode, file, fileList, actions) => {
+    const isUploadComplete = file.percent === 100;
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "12px",
+          marginTop: "10px",
+
+          border: "1px solid #EAECF0",
+          borderRadius: "12px",
+        }}
+      >
+        <Space>
+          {getFileIcon(file.name)}
+
+          <div
+            style={{
+              marginLeft: "10px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyItems: "space-between",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "start",
+              }}
+            >
+              <div style={{ fontSize: "14px", fontWeight: "500" }}>
+                {file.name}
+              </div>
+              <div
+                style={{
+                  fontSize: "14px",
+                  fontWeight: "400",
+                  color: "#475467",
+                }}
+              >
+                200 KB - {file.percent}% uploaded
+              </div>
+            </div>
+          </div>
+        </Space>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          {file.status === "uploading" && !isUploadComplete && (
+            <Progress
+              type="circle"
+              percent={file.percent}
+              width={40}
+              strokeColor="#27665A"
+              style={{
+                marginBottom: "10px",
+              }}
+              format={() => null}
+            />
+          )}
+          {isUploadComplete && (
+            <>
+              <Checkbox
+                style={{
+                  marginBottom: "5px",
+                }}
+              />
+              <Button
+                style={{
+                  color: "black",
+                  fontSize: "18px",
+                  cursor: "pointer",
+                  border: "none",
+                  boxShadow: "none",
+                }}
+                onClick={() => actions.remove()}
+              >
+                <Delete fillColor="#667085" />
+              </Button>
+            </>
+          )}
         </div>
       </div>
     );
@@ -654,7 +773,7 @@ const Home: React.FC = () => {
                 <Input
                   type="datetime-local"
                   suffix={<InfoCircle fillColor="#98A2B3" />}
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", paddingBlock: 4 }}
                 />
               </div>
             </Space.Compact>
@@ -663,7 +782,7 @@ const Home: React.FC = () => {
                 <Input
                   type="datetime-local"
                   suffix={<InfoCircle fillColor="#98A2B3" />}
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", paddingBlock: 4 }}
                   className="input-disabled"
                   disabled
                 />
@@ -675,7 +794,7 @@ const Home: React.FC = () => {
                   type="datetime-local"
                   status="error"
                   suffix={<ExclamationCircle fillColor="#F04438" />}
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", paddingBlock: 4 }}
                 />
               </div>
             </Space.Compact>
@@ -880,47 +999,43 @@ const Home: React.FC = () => {
             }}
             className="select-input"
           >
-            <Space>
-              <div>
-                <Select
-                  mode="multiple"
-                  allowClear
-                  style={{ width: "200px" }}
-                  placeholder="Please select"
-                  defaultValue={["Carla", "Maria"]}
-                  onChange={handleSelectChange}
-                  options={options}
-                />
-              </div>
-            </Space>
-            <Space>
-              <div>
-                <Select
-                  mode="multiple"
-                  allowClear
-                  style={{ width: "200px" }}
-                  placeholder="Please select"
-                  defaultValue={["Carla", "Maria"]}
-                  onChange={handleSelectChange}
-                  options={options}
-                  disabled
-                />
-              </div>
-            </Space>
-            <Space>
-              <div>
-                <Select
-                  mode="multiple"
-                  allowClear
-                  status="error"
-                  style={{ width: "200px" }}
-                  placeholder="Please select"
-                  defaultValue={["Carla", "Maria"]}
-                  onChange={handleSelectChange}
-                  options={options}
-                />
-              </div>
-            </Space>
+            <div>
+              <Select
+                mode="multiple"
+                allowClear
+                style={{ width: "200px" }}
+                placeholder="Please select"
+                defaultValue={["Carla", "Maria"]}
+                onChange={handleSelectChange}
+                options={options}
+              />
+            </div>
+
+            <div>
+              <Select
+                mode="multiple"
+                allowClear
+                style={{ width: "200px" }}
+                placeholder="Please select"
+                defaultValue={["Carla", "Maria"]}
+                onChange={handleSelectChange}
+                options={options}
+                disabled
+              />
+            </div>
+
+            <div>
+              <Select
+                mode="multiple"
+                allowClear
+                status="error"
+                style={{ width: "200px" }}
+                placeholder="Please select"
+                defaultValue={["Carla", "Maria"]}
+                onChange={handleSelectChange}
+                options={options}
+              />
+            </div>
           </div>
           <div
             style={{
@@ -931,41 +1046,55 @@ const Home: React.FC = () => {
             }}
             className="clipboard-input"
           >
-            <Space.Compact style={{ width: "200px" }}>
+            <Space.Compact style={{ width: "250px" }}>
               <Input
                 suffix={<InfoCircle fillColor="#98A2B3" />}
-                style={{ width: "200px" }}
+                style={{ width: "250px" }}
                 placeholder="Content holder"
+                addonAfter={
+                  <Button
+                    type="text"
+                    icon={<Copy fillColor="#344054" />}
+                    style={{ backgroundColor: "white" }}
+                  >
+                    Copy
+                  </Button>
+                }
               />
-              <Button type="default" icon={<Copy fillColor="#344054" />}>
-                Copy
-              </Button>
             </Space.Compact>
-            <Space.Compact style={{ width: "200px" }}>
+            <Space.Compact style={{ width: "250px" }}>
               <Input
                 suffix={<InfoCircle fillColor="#98A2B3" />}
-                style={{ width: "200px" }}
+                style={{ width: "250px" }}
                 placeholder="Content holder"
                 disabled
+                addonAfter={
+                  <Button
+                    type="text"
+                    icon={<Copy fillColor="#344054" />}
+                    disabled
+                  >
+                    Copy
+                  </Button>
+                }
               />
-              <Button
-                type="default"
-                icon={<Copy fillColor="#344054" isDisabled />}
-                disabled
-              >
-                Copy
-              </Button>
             </Space.Compact>
-            <Space.Compact style={{ width: "200px" }}>
+            <Space.Compact style={{ width: "250px" }}>
               <Input
                 status="error"
                 suffix={<InfoCircle fillColor="#98A2B3" />}
-                style={{ width: "200px" }}
+                style={{ width: "250px" }}
                 placeholder="Content holder"
+                addonAfter={
+                  <Button
+                    type="text"
+                    icon={<Copy fillColor="#344054" />}
+                    style={{ backgroundColor: "white" }}
+                  >
+                    Copy
+                  </Button>
+                }
               />
-              <Button type="default" icon={<Copy fillColor="#344054" />}>
-                Copy
-              </Button>
             </Space.Compact>
           </div>
         </div>
@@ -3120,6 +3249,8 @@ const Home: React.FC = () => {
               fontSize: "12px",
               color: "#344054",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -3144,6 +3275,8 @@ const Home: React.FC = () => {
               fontSize: "14px",
               color: "#344054",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -3166,7 +3299,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "12px",
               color: "#344054",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
           <Alert
@@ -3189,7 +3324,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "14px",
               color: "#344054",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
         </div>
@@ -3224,6 +3361,8 @@ const Home: React.FC = () => {
               fontSize: "12px",
               color: "#344054",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -3248,6 +3387,8 @@ const Home: React.FC = () => {
               fontSize: "14px",
               color: "#344054",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -3270,7 +3411,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "12px",
               color: "#344054",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
           <Alert
@@ -3293,7 +3436,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "14px",
               color: "#344054",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
         </div>
@@ -3329,6 +3474,8 @@ const Home: React.FC = () => {
               fontSize: "12px",
               color: "#344054",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -3354,6 +3501,8 @@ const Home: React.FC = () => {
               fontSize: "14px",
               color: "#344054",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -3377,7 +3526,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "12px",
               color: "#344054",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
           <Alert
@@ -3401,7 +3552,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "14px",
               color: "#344054",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
         </div>
@@ -3437,6 +3590,8 @@ const Home: React.FC = () => {
               fontSize: "12px",
               color: "#1A443C",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -3462,6 +3617,8 @@ const Home: React.FC = () => {
               fontSize: "14px",
               color: "#1A443C",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -3485,7 +3642,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "12px",
               color: "#1A443C",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
           <Alert
@@ -3509,7 +3668,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "14px",
               color: "#1A443C",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
         </div>
@@ -3545,6 +3706,8 @@ const Home: React.FC = () => {
               fontSize: "12px",
               color: "#1A443C",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -3570,6 +3733,8 @@ const Home: React.FC = () => {
               fontSize: "14px",
               color: "#1A443C",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -3593,7 +3758,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "12px",
               color: "#1A443C",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
           <Alert
@@ -3617,7 +3784,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "14px",
               color: "#1A443C",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
         </div>
@@ -3653,6 +3822,8 @@ const Home: React.FC = () => {
               fontSize: "12px",
               color: "#1A443C",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -3678,6 +3849,8 @@ const Home: React.FC = () => {
               fontSize: "14px",
               color: "#1A443C",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -3701,7 +3874,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "12px",
               color: "#1A443C",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
           <Alert
@@ -3725,7 +3900,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "14px",
               color: "#1A443C",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
         </div>
@@ -3760,6 +3937,8 @@ const Home: React.FC = () => {
               fontSize: "12px",
               color: "#B42318",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -3784,6 +3963,8 @@ const Home: React.FC = () => {
               fontSize: "14px",
               color: "#B42318",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -3806,7 +3987,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "12px",
               color: "#B42318",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
           <Alert
@@ -3829,7 +4012,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "14px",
               color: "#B42318",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
         </div>
@@ -3864,6 +4049,8 @@ const Home: React.FC = () => {
               fontSize: "12px",
               color: "#B42318",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -3888,6 +4075,8 @@ const Home: React.FC = () => {
               fontSize: "14px",
               color: "#B42318",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -3910,7 +4099,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "12px",
               color: "#B42318",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
           <Alert
@@ -3933,7 +4124,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "14px",
               color: "#B42318",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
         </div>
@@ -3970,6 +4163,8 @@ const Home: React.FC = () => {
               color: "#B42318",
               padding: 4,
               borderColor: "#D92D20",
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -3996,6 +4191,8 @@ const Home: React.FC = () => {
               padding: 4,
               borderColor: "#D92D20",
               backgroundColor: "white",
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -4018,9 +4215,11 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "12px",
               color: "#B42318",
-              padding: 4,
-              borderColor: "#D92D20",
               backgroundColor: "white",
+              borderColor: "#D92D20",
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
           <Alert
@@ -4043,9 +4242,12 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "14px",
               color: "#B42318",
-              padding: 4,
+
               borderColor: "#D92D20",
               backgroundColor: "white",
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
         </div>
@@ -4080,7 +4282,9 @@ const Home: React.FC = () => {
               fontSize: "12px",
               color: "#B54708",
               padding: 4,
-              width: "360px",
+              paddingRight: 10,
+              alignContent: "top",
+              width: "355px",
             }}
           />
           <Alert
@@ -4104,8 +4308,10 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "14px",
               color: "#B54708",
+              paddingRight: 10,
+              alignContent: "top",
               padding: 4,
-              width: "400px",
+              width: "405px",
             }}
           />
           <div
@@ -4139,8 +4345,11 @@ const Home: React.FC = () => {
                 gap: "5px",
                 fontWeight: 500,
                 fontSize: "12px",
+                alignContent: "top",
                 color: "#B54708",
-                padding: 4,
+                paddingTop: 4,
+                paddingBottom: 4,
+                paddingRight: 0,
               }}
             />
             <Alert
@@ -4165,7 +4374,9 @@ const Home: React.FC = () => {
                 fontWeight: 500,
                 fontSize: "14px",
                 color: "#B54708",
-                padding: 4,
+                paddingTop: 4,
+                paddingBottom: 4,
+                paddingRight: 0,
               }}
             />
           </div>
@@ -4201,7 +4412,9 @@ const Home: React.FC = () => {
               fontSize: "12px",
               color: "#B54708",
               padding: 4,
-              width: "360px",
+              paddingRight: 10,
+              alignContent: "top",
+              width: "355px",
             }}
           />
           <Alert
@@ -4224,9 +4437,14 @@ const Home: React.FC = () => {
               gap: "5px",
               fontWeight: 500,
               fontSize: "14px",
+
+              alignContent: "top",
               color: "#B54708",
+
+              width: "405px",
+              paddingRight: 10,
+
               padding: 4,
-              width: "400px",
             }}
           />
           <div
@@ -4258,9 +4476,12 @@ const Home: React.FC = () => {
                 borderRadius: "10px",
                 gap: "5px",
                 fontWeight: 500,
+
                 fontSize: "12px",
                 color: "#B54708",
-                padding: 4,
+                paddingTop: 4,
+                paddingBottom: 4,
+                paddingRight: 0,
               }}
             />
             <Alert
@@ -4284,8 +4505,11 @@ const Home: React.FC = () => {
                 gap: "5px",
                 fontWeight: 500,
                 fontSize: "14px",
+
                 color: "#B54708",
-                padding: 4,
+                paddingTop: 4,
+                paddingBottom: 4,
+                paddingRight: 0,
               }}
             />
           </div>
@@ -4324,6 +4548,8 @@ const Home: React.FC = () => {
               borderColor: "#DC6803",
               width: "360px",
               backgroundColor: "white",
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -4349,7 +4575,9 @@ const Home: React.FC = () => {
               color: "#B54708",
               padding: 4,
               borderColor: "#DC6803",
-              width: "400px",
+              width: "405px",
+              paddingRight: 10,
+              alignContent: "top",
               backgroundColor: "white",
             }}
           />
@@ -4381,10 +4609,13 @@ const Home: React.FC = () => {
                 fontWeight: 500,
                 fontSize: "12px",
                 color: "#B54708",
-                padding: 4,
+
                 borderColor: "#DC6803",
                 width: "360px",
                 backgroundColor: "white",
+                paddingTop: 4,
+                paddingBottom: 4,
+                paddingRight: 0,
               }}
             />
             <Alert
@@ -4407,10 +4638,13 @@ const Home: React.FC = () => {
                 fontWeight: 500,
                 fontSize: "14px",
                 color: "#B54708",
-                padding: 4,
+
                 borderColor: "#DC6803",
                 width: "400px",
                 backgroundColor: "white",
+                paddingTop: 4,
+                paddingBottom: 4,
+                paddingRight: 0,
               }}
             />
           </div>
@@ -4446,6 +4680,8 @@ const Home: React.FC = () => {
               fontSize: "12px",
               color: "#067647",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -4468,6 +4704,8 @@ const Home: React.FC = () => {
               gap: "5px",
               fontWeight: 500,
               fontSize: "14px",
+              paddingRight: 10,
+              alignContent: "top",
               color: "#067647",
               padding: 4,
             }}
@@ -4492,7 +4730,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "12px",
               color: "#067647",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
           <Alert
@@ -4515,7 +4755,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "14px",
               color: "#067647",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
         </div>
@@ -4549,6 +4791,8 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "12px",
               color: "#067647",
+              paddingRight: 10,
+              alignContent: "top",
               padding: 4,
             }}
           />
@@ -4574,6 +4818,8 @@ const Home: React.FC = () => {
               fontSize: "14px",
               color: "#067647",
               padding: 4,
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -4596,7 +4842,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "12px",
               color: "#067647",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
           <Alert
@@ -4619,7 +4867,9 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "14px",
               color: "#067647",
-              padding: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
         </div>
@@ -4656,6 +4906,8 @@ const Home: React.FC = () => {
               padding: 4,
               borderColor: "#079455",
               backgroundColor: "white",
+              paddingRight: 10,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -4681,6 +4933,8 @@ const Home: React.FC = () => {
               color: "#067647",
               padding: 4,
               borderColor: "#079455",
+              paddingRight: 10,
+              alignContent: "top",
               backgroundColor: "white",
             }}
           />
@@ -4707,6 +4961,9 @@ const Home: React.FC = () => {
               padding: 4,
               borderColor: "#079455",
               backgroundColor: "white",
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
           <Alert
@@ -4732,6 +4989,9 @@ const Home: React.FC = () => {
               padding: 4,
               borderColor: "#079455",
               backgroundColor: "white",
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 0,
             }}
           />
         </div>
@@ -4739,7 +4999,7 @@ const Home: React.FC = () => {
           className="transparent alert"
           style={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: "column",
             gap: "10px",
             marginTop: "10px",
           }}
@@ -4765,9 +5025,14 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "12px",
               color: "#344054",
-              padding: 4,
+
               borderColor: "#D0D5DD",
+
               backgroundColor: "#FFFFFF",
+              paddingLeft: 4,
+              paddingRight: 15,
+              width: "345px",
+              alignContent: "top",
             }}
           />
           <Alert
@@ -4794,66 +5059,82 @@ const Home: React.FC = () => {
               padding: 4,
               borderColor: "#D0D5DD",
               backgroundColor: "#FFFFFF",
+              paddingRight: 10,
+              alignContent: "top",
+              width: "415px",
             }}
           />
-          <Alert
-            className="transparent-alert"
-            message="We've just released a new feature"
-            action={
-              <AlertTag
-                fontSize="12px"
-                backgroundColor="#FFFFFF"
-                color="#344054"
-                borderColor="#D0D5DD"
-                label="New Feature"
-                rightIcon={<ArrowRightOutlined />}
-              />
-            }
-            showIcon
-            icon={<SmallDot fillColor="#17B26A" />}
+          <div
             style={{
-              borderRadius: "10px",
-              gap: "5px",
-              fontWeight: 500,
-              fontSize: "12px",
-              color: "#344054",
-              padding: 4,
-              borderColor: "#D0D5DD",
-              backgroundColor: "#FFFFFF",
+              display: "flex",
+              flexDirection: "row",
+              gap: "10px",
+              marginTop: "10px",
             }}
-          />
-          <Alert
-            className="transparent-alert"
-            message="You've updated your profile and details"
-            action={
-              <AlertTag
-                fontSize="14px"
-                backgroundColor="#FFFFFF"
-                color="#344054"
-                borderColor="#D0D5DD"
-                label="New Feature"
-                rightIcon={<ArrowRightOutlined />}
-              />
-            }
-            showIcon
-            icon={<SmallDot fillColor="#17B26A" />}
-            style={{
-              borderRadius: "10px",
-              gap: "5px",
-              fontWeight: 500,
-              fontSize: "14px",
-              color: "#344054",
-              padding: 4,
-              borderColor: "#D0D5DD",
-              backgroundColor: "#FFFFFF",
-            }}
-          />
+          >
+            <Alert
+              className="transparent-alert"
+              message="We've just released a new feature"
+              action={
+                <AlertTag
+                  fontSize="12px"
+                  backgroundColor="#FFFFFF"
+                  color="#344054"
+                  borderColor="#D0D5DD"
+                  label="New Feature"
+                  rightIcon={<ArrowRightOutlined />}
+                />
+              }
+              showIcon
+              icon={<SmallDot fillColor="#17B26A" />}
+              style={{
+                borderRadius: "10px",
+                gap: "5px",
+                fontWeight: 500,
+                fontSize: "12px",
+                color: "#344054",
+                padding: 4,
+                borderColor: "#D0D5DD",
+                backgroundColor: "#FFFFFF",
+                paddingRight: 0,
+                alignContent: "top",
+              }}
+            />
+            <Alert
+              className="transparent-alert"
+              message="You've updated your profile and details"
+              action={
+                <AlertTag
+                  fontSize="14px"
+                  backgroundColor="#FFFFFF"
+                  color="#344054"
+                  borderColor="#D0D5DD"
+                  label="New Feature"
+                  rightIcon={<ArrowRightOutlined />}
+                />
+              }
+              showIcon
+              icon={<SmallDot fillColor="#17B26A" />}
+              style={{
+                borderRadius: "10px",
+                gap: "5px",
+                fontWeight: 500,
+                fontSize: "14px",
+                color: "#344054",
+                padding: 4,
+                borderColor: "#D0D5DD",
+                paddingRight: 0,
+                alignContent: "top",
+                backgroundColor: "#FFFFFF",
+              }}
+            />
+          </div>
         </div>
         <div
           className="transparent alert"
           style={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: "column",
             gap: "10px",
             marginTop: "10px",
           }}
@@ -4879,9 +5160,15 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "12px",
               color: "#344054",
-              padding: 4,
+
               borderColor: "#D0D5DD",
               backgroundColor: "#FFFFFF",
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 15,
+              paddingLeft: 4,
+              width: "345px",
+              alignContent: "top",
             }}
           />
           <Alert
@@ -4905,63 +5192,89 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "14px",
               color: "#344054",
-              padding: 4,
+
               borderColor: "#D0D5DD",
               backgroundColor: "#FFFFFF",
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 15,
+              paddingLeft: 4,
+              width: "420px",
+              alignContent: "top",
             }}
           />
-          <Alert
-            className="transparent-alert"
-            message="We've just released a new feature"
-            action={
-              <AlertTag
-                fontSize="12px"
-                backgroundColor="#FFFFFF"
-                color="#344054"
-                borderColor="#D0D5DD"
-                label="New Feature"
-                rightIcon={<ArrowRightOutlined />}
-              />
-            }
-            showIcon
-            icon={<SmallDot fillColor="#9E77ED" />}
+          <div
+            className="transparent alert"
             style={{
-              borderRadius: "10px",
-              gap: "5px",
-              fontWeight: 500,
-              fontSize: "12px",
-              color: "#344054",
-              padding: 4,
-              borderColor: "#D0D5DD",
-              backgroundColor: "#FFFFFF",
+              display: "flex",
+              flexDirection: "row",
+              gap: "10px",
+              marginTop: "10px",
             }}
-          />
-          <Alert
-            className="transparent-alert"
-            message="You've updated your profile and details"
-            action={
-              <AlertTag
-                fontSize="14px"
-                backgroundColor="#FFFFFF"
-                color="#344054"
-                borderColor="#D0D5DD"
-                label="New Feature"
-                rightIcon={<ArrowRightOutlined />}
-              />
-            }
-            showIcon
-            icon={<SmallDot fillColor="#9E77ED" />}
-            style={{
-              borderRadius: "10px",
-              gap: "5px",
-              fontWeight: 500,
-              fontSize: "14px",
-              color: "#344054",
-              padding: 4,
-              borderColor: "#D0D5DD",
-              backgroundColor: "#FFFFFF",
-            }}
-          />
+          >
+            <Alert
+              className="transparent-alert"
+              message="We've just released a new feature"
+              action={
+                <AlertTag
+                  fontSize="12px"
+                  backgroundColor="#FFFFFF"
+                  color="#344054"
+                  borderColor="#D0D5DD"
+                  label="New Feature"
+                  rightIcon={<ArrowRightOutlined />}
+                />
+              }
+              showIcon
+              icon={<SmallDot fillColor="#9E77ED" />}
+              style={{
+                borderRadius: "10px",
+                gap: "5px",
+                fontWeight: 500,
+                fontSize: "12px",
+                color: "#344054",
+
+                borderColor: "#D0D5DD",
+                paddingTop: 4,
+                paddingBottom: 4,
+                paddingRight: 0,
+                paddingLeft: 4,
+                alignContent: "top",
+                backgroundColor: "#FFFFFF",
+              }}
+            />
+            <Alert
+              className="transparent-alert"
+              message="You've updated your profile and details"
+              action={
+                <AlertTag
+                  fontSize="14px"
+                  backgroundColor="#FFFFFF"
+                  color="#344054"
+                  borderColor="#D0D5DD"
+                  label="New Feature"
+                  rightIcon={<ArrowRightOutlined />}
+                />
+              }
+              showIcon
+              icon={<SmallDot fillColor="#9E77ED" />}
+              style={{
+                borderRadius: "10px",
+                gap: "5px",
+                fontWeight: 500,
+                fontSize: "14px",
+                color: "#344054",
+
+                borderColor: "#D0D5DD",
+                paddingTop: 4,
+                paddingBottom: 4,
+                paddingRight: 0,
+                paddingLeft: 4,
+                alignContent: "top",
+                backgroundColor: "#FFFFFF",
+              }}
+            />
+          </div>
         </div>
         <div
           className="transparent alert"
@@ -4996,6 +5309,8 @@ const Home: React.FC = () => {
               padding: 4,
               borderColor: "#D0D5DD",
               backgroundColor: "#FFFFFF",
+              paddingRight: 12,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -5021,6 +5336,8 @@ const Home: React.FC = () => {
               color: "#344054",
               padding: 4,
               borderColor: "#D0D5DD",
+              paddingRight: 12,
+              alignContent: "top",
               backgroundColor: "#FFFFFF",
             }}
           />
@@ -5048,6 +5365,8 @@ const Home: React.FC = () => {
               padding: 4,
               borderColor: "#D0D5DD",
               backgroundColor: "#FFFFFF",
+              paddingRight: 0,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -5074,6 +5393,8 @@ const Home: React.FC = () => {
               padding: 4,
               borderColor: "#D0D5DD",
               backgroundColor: "#FFFFFF",
+              paddingRight: 0,
+              alignContent: "top",
             }}
           />
         </div>
@@ -5110,6 +5431,8 @@ const Home: React.FC = () => {
               padding: 4,
               borderColor: "#D0D5DD",
               backgroundColor: "#FFFFFF",
+              paddingRight: 12,
+              alignContent: "top",
               width: "380px",
             }}
           />
@@ -5137,7 +5460,9 @@ const Home: React.FC = () => {
               padding: 4,
               borderColor: "#D0D5DD",
               backgroundColor: "#FFFFFF",
-              width: "420px",
+              paddingRight: 12,
+              alignContent: "top",
+              width: "425px",
             }}
           />
           <div
@@ -5172,6 +5497,8 @@ const Home: React.FC = () => {
                 padding: 4,
                 borderColor: "#D0D5DD",
                 backgroundColor: "#FFFFFF",
+                paddingRight: 0,
+                alignContent: "top",
               }}
             />
             <Alert
@@ -5198,6 +5525,8 @@ const Home: React.FC = () => {
                 padding: 4,
                 borderColor: "#D0D5DD",
                 backgroundColor: "#FFFFFF",
+                paddingRight: 0,
+                alignContent: "top",
               }}
             />
           </div>
@@ -5206,7 +5535,7 @@ const Home: React.FC = () => {
           className="transparent alert"
           style={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: "column",
             gap: "10px",
             marginTop: "10px",
           }}
@@ -5232,9 +5561,16 @@ const Home: React.FC = () => {
               fontWeight: 500,
               fontSize: "12px",
               color: "#344054",
-              padding: 4,
+
               borderColor: "#D0D5DD",
+
               backgroundColor: "#FFFFFF",
+              width: "345px",
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 12,
+              paddingLeft: 4,
+              alignContent: "top",
             }}
           />
           <Alert
@@ -5261,60 +5597,86 @@ const Home: React.FC = () => {
               padding: 4,
               borderColor: "#D0D5DD",
               backgroundColor: "#FFFFFF",
+              width: "385px",
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingRight: 12,
+              paddingLeft: 4,
+              alignContent: "top",
             }}
           />
-          <Alert
-            className="transparent-alert"
-            message="You've updated your profilw and details"
-            action={
-              <AlertTag
-                fontSize="12px"
-                backgroundColor="#FFFFFF"
-                color="#344054"
-                borderColor="#D0D5DD"
-                label="Success"
-                rightIcon={<ArrowRightOutlined />}
-              />
-            }
-            showIcon
-            icon={<SmallDot fillColor="#17B26A" />}
+          <div
             style={{
-              borderRadius: "10px",
-              gap: "5px",
-              fontWeight: 500,
-              fontSize: "12px",
-              color: "#344054",
-              padding: 4,
-              borderColor: "#D0D5DD",
-              backgroundColor: "#FFFFFF",
+              display: "flex",
+              flexDirection: "row",
+              gap: "10px",
+              marginTop: "10px",
             }}
-          />
-          <Alert
-            className="transparent-alert"
-            message="You've updated your profilw and details"
-            action={
-              <AlertTag
-                fontSize="14px"
-                backgroundColor="#FFFFFF"
-                color="#344054"
-                borderColor="#D0D5DD"
-                label="Success"
-                rightIcon={<ArrowRightOutlined />}
-              />
-            }
-            showIcon
-            icon={<SmallDot fillColor="#17B26A" />}
-            style={{
-              borderRadius: "10px",
-              gap: "5px",
-              fontWeight: 500,
-              fontSize: "14px",
-              color: "#344054",
-              padding: 4,
-              borderColor: "#D0D5DD",
-              backgroundColor: "#FFFFFF",
-            }}
-          />
+          >
+            <Alert
+              className="transparent-alert"
+              message="You've updated your profilw and details"
+              action={
+                <AlertTag
+                  fontSize="12px"
+                  backgroundColor="#FFFFFF"
+                  color="#344054"
+                  borderColor="#D0D5DD"
+                  label="Success"
+                  rightIcon={<ArrowRightOutlined />}
+                />
+              }
+              showIcon
+              icon={<SmallDot fillColor="#17B26A" />}
+              style={{
+                borderRadius: "10px",
+                gap: "5px",
+                fontWeight: 500,
+                fontSize: "12px",
+                color: "#344054",
+
+                borderColor: "#D0D5DD",
+                backgroundColor: "#FFFFFF",
+
+                paddingTop: 4,
+                paddingBottom: 4,
+                paddingRight: 0,
+                paddingLeft: 4,
+                alignContent: "top",
+              }}
+            />
+            <Alert
+              className="transparent-alert"
+              message="You've updated your profilw and details"
+              action={
+                <AlertTag
+                  fontSize="14px"
+                  backgroundColor="#FFFFFF"
+                  color="#344054"
+                  borderColor="#D0D5DD"
+                  label="Success"
+                  rightIcon={<ArrowRightOutlined />}
+                />
+              }
+              showIcon
+              icon={<SmallDot fillColor="#17B26A" />}
+              style={{
+                borderRadius: "10px",
+                gap: "5px",
+                fontWeight: 500,
+                fontSize: "14px",
+                color: "#344054",
+
+                borderColor: "#D0D5DD",
+                paddingTop: 4,
+                paddingBottom: 4,
+                paddingRight: 0,
+                paddingLeft: 4,
+                alignContent: "top",
+                backgroundColor: "#FFFFFF",
+              }}
+            />
+          </div>
         </div>
       </div>
       <div className="Toggles">
@@ -6801,6 +7163,7 @@ const Home: React.FC = () => {
             keyboard
             onOk={handleOk}
             width={600}
+            closeIcon={<Times fillColor="white" />}
             onCancel={handleCancel}
             footer={(_, { OkBtn, CancelBtn }) => (
               <>
@@ -6957,6 +7320,48 @@ const Home: React.FC = () => {
                   </p>
                   <p style={{ color: "#475467" }}>
                     <strong style={{ color: "#98A2B3" }}>
+                      Clique para fazer o upload
+                    </strong>{" "}
+                    ou arraste e solte
+                  </p>
+                  <p style={{ color: "#475467" }}>SVG, PNG, JPG or PDF</p>
+                </div>
+              </Dragger>
+            </Space>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+              marginTop: "10px",
+            }}
+          >
+            <Space>
+              <Dragger
+                {...circleProps}
+                defaultFileList={fileList}
+                style={{
+                  backgroundColor: "white",
+                  border: " 2px solid #EAECF0",
+                }}
+                className="file-upload"
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "2px",
+                    alignItems: "center",
+                    marginLeft: "80px",
+                    marginRight: "80px",
+                  }}
+                >
+                  <p>
+                    <UploadBox />
+                  </p>
+                  <p style={{ color: "#475467" }}>
+                    <strong style={{ color: "#1A443C" }}>
                       Clique para fazer o upload
                     </strong>{" "}
                     ou arraste e solte

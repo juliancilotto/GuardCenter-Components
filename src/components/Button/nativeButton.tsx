@@ -45,7 +45,12 @@ export const NativeButton: React.FC<DoubleIconButtonProps> = ({
         `${defaultGreenColorClasName} ` +
         `${textColorClasName}`
       }
-      style={{ lineHeight: 0 }}
+      style={{
+        lineHeight: 0,
+
+        padding: 10,
+      }}
+      size="large"
     >
       {leftIcon && <span>{leftIcon}</span>}
       {children}
