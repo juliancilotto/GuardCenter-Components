@@ -129,8 +129,11 @@ const props: UploadProps = {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: "10px 0",
-          borderBottom: "1px solid #f0f0f0",
+          padding: "12px",
+          marginTop: "10px",
+
+          border: "1px solid #EAECF0",
+          borderRadius: "12px",
         }}
       >
         <Space>
@@ -178,6 +181,121 @@ const props: UploadProps = {
           >
             <Delete fillColor="#667085" />
           </Button>
+        </div>
+      </div>
+    );
+  },
+};
+
+const circleProps: UploadProps = {
+  name: "file",
+  multiple: true,
+  action: "https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload",
+  onChange(info) {
+    const { status } = info.file;
+    if (status !== "uploading") {
+      console.log(info.file, info.fileList);
+    }
+    if (status === "done") {
+      message.success(`${info.file.name} file uploaded successfully.`);
+    } else if (status === "error") {
+      message.error(`${info.file.name} file upload failed.`);
+    }
+  },
+  onDrop(e) {
+    console.log("Dropped files", e.dataTransfer.files);
+  },
+  defaultFileList: fileList,
+  itemRender: (originNode, file, fileList, actions) => {
+    const isUploadComplete = file.percent === 100;
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "12px",
+          marginTop: "10px",
+
+          border: "1px solid #EAECF0",
+          borderRadius: "12px",
+        }}
+      >
+        <Space>
+          {getFileIcon(file.name)}
+
+          <div
+            style={{
+              marginLeft: "10px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyItems: "space-between",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "start",
+              }}
+            >
+              <div style={{ fontSize: "14px", fontWeight: "500" }}>
+                {file.name}
+              </div>
+              <div
+                style={{
+                  fontSize: "14px",
+                  fontWeight: "400",
+                  color: "#475467",
+                }}
+              >
+                200 KB - {file.percent}% uploaded
+              </div>
+            </div>
+          </div>
+        </Space>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          {file.status === "uploading" && !isUploadComplete && (
+            <Progress
+              type="circle"
+              percent={file.percent}
+              width={40}
+              strokeColor="#27665A"
+              style={{
+                marginBottom: "10px",
+              }}
+              format={() => null}
+            />
+          )}
+          {isUploadComplete && (
+            <>
+              <Checkbox
+                style={{
+                  marginBottom: "5px",
+                }}
+              />
+              <Button
+                style={{
+                  color: "black",
+                  fontSize: "18px",
+                  cursor: "pointer",
+                  border: "none",
+                  boxShadow: "none",
+                }}
+                onClick={() => actions.remove()}
+              >
+                <Delete fillColor="#667085" />
+              </Button>
+            </>
+          )}
         </div>
       </div>
     );
@@ -7202,6 +7320,48 @@ const Home: React.FC = () => {
                   </p>
                   <p style={{ color: "#475467" }}>
                     <strong style={{ color: "#98A2B3" }}>
+                      Clique para fazer o upload
+                    </strong>{" "}
+                    ou arraste e solte
+                  </p>
+                  <p style={{ color: "#475467" }}>SVG, PNG, JPG or PDF</p>
+                </div>
+              </Dragger>
+            </Space>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+              marginTop: "10px",
+            }}
+          >
+            <Space>
+              <Dragger
+                {...circleProps}
+                defaultFileList={fileList}
+                style={{
+                  backgroundColor: "white",
+                  border: " 2px solid #EAECF0",
+                }}
+                className="file-upload"
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "2px",
+                    alignItems: "center",
+                    marginLeft: "80px",
+                    marginRight: "80px",
+                  }}
+                >
+                  <p>
+                    <UploadBox />
+                  </p>
+                  <p style={{ color: "#475467" }}>
+                    <strong style={{ color: "#1A443C" }}>
                       Clique para fazer o upload
                     </strong>{" "}
                     ou arraste e solte
